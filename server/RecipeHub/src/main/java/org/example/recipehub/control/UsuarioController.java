@@ -1,6 +1,7 @@
 package org.example.recipehub.control;
 
 import org.example.recipehub.model.Usuario;
+import org.example.recipehub.model.dto.UsuarioDTO;
 import org.example.recipehub.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,14 +22,14 @@ public class UsuarioController {
 
     @GetMapping()
     public String listar(Model model) {
-        List<Usuario> usuarios = usuarioService.listar();
+        List<UsuarioDTO> usuarios = usuarioService.listar();
         model.addAttribute("usuarios", usuarios);
         return "usuario/listar";
     }
 
     @GetMapping("/{id}")
     public String detalhar(Model model, @PathVariable Long id) {
-        Usuario usuario = usuarioService.detalhar(id);
+        UsuarioDTO usuario = usuarioService.detalhar(id);
         model.addAttribute("usuario", usuario);
         return "usuario/detalhar";
     }
@@ -40,7 +41,7 @@ public class UsuarioController {
 
     @PostMapping()
     public String salvar(Usuario usuario) {
-        Usuario novoUsuario = usuarioService.salvar(usuario);
+        UsuarioDTO novoUsuario = usuarioService.salvar(usuario);
         return "redirect:/usuarios";
     }
 
