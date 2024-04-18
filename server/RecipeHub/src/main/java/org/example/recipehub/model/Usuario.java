@@ -2,6 +2,9 @@ package org.example.recipehub.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Usuario {
 
@@ -16,6 +19,9 @@ public class Usuario {
     private String senha;
 
     private String email;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Receita> receitas = new ArrayList<>();
 
     public Usuario() {
     }
@@ -73,5 +79,13 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Receita> getReceitas() {
+        return receitas;
+    }
+
+    public void setReceitas(List<Receita> receitas) {
+        this.receitas = receitas;
     }
 }
