@@ -2,6 +2,8 @@ package org.example.recipehub.model.dto;
 
 import org.example.recipehub.model.Usuario;
 
+import java.util.List;
+
 public class UsuarioDTO {
 
     private Long id;
@@ -9,16 +11,18 @@ public class UsuarioDTO {
     private String login;
     private String senha;
     private String email;
+    private List<ReceitaDTO> receitas;
 
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(Long id, String nome, String login, String senha, String email) {
+    public UsuarioDTO(Long id, String nome, String login, String senha, String email, List<ReceitaDTO> receitas) {
         this.id = id;
         this.nome = nome;
         this.login = login;
         this.senha = senha;
         this.email = email;
+        this.receitas = receitas;
     }
 
     public UsuarioDTO(Usuario usuario) {
@@ -28,6 +32,7 @@ public class UsuarioDTO {
             login = usuario.getLogin();
             senha = usuario.getSenha();
             email = usuario.getEmail();
+            receitas = usuario.getReceitas().stream().map(ReceitaDTO::new).toList();
         }
     }
 
@@ -69,5 +74,13 @@ public class UsuarioDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<ReceitaDTO> getReceitas() {
+        return receitas;
+    }
+
+    public void setReceitas(List<ReceitaDTO> receitas) {
+        this.receitas = receitas;
     }
 }
