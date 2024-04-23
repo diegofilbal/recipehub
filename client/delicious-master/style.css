@@ -308,7 +308,6 @@ ol li {
   background-size: cover;
 }
 .bg-overlay::after {
-  background-color: rgba(10, 12, 18, 0.55);
   position: absolute;
   z-index: -1;
   top: 0;
@@ -1659,6 +1658,8 @@ textarea:focus {
   height: 190px;
   margin-left: 4%;
   margin-right: 4%;
+  background-color: rgba(247, 206, 91, 0.1);
+
 }
 @media only screen and (max-width: 767px) {
   .breadcumb-area {
@@ -1668,7 +1669,7 @@ textarea:focus {
 .breadcumb-area .breadcumb-text h2 {
   font-size: 30px;
   margin-bottom: 0;
-  color: #ffffff;
+  color: #F7CE5B;
 }
 @media only screen and (max-width: 767px) {
   .breadcumb-area .breadcumb-text h2 {
