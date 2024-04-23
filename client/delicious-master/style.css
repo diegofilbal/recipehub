@@ -57,11 +57,24 @@ a:focus {
   font-weight: 300;
   font-size: 14px;
   color: #af9b46;
-  border-radius: 5px;
+  /* border-radius: 20px; */
 }
+
+.user-photo-img {
+  width: 40px; /* Largura da foto do usuário */
+  height: 40px; /* Altura da foto do usuário */
+  border-radius: 50%; /* Transformar em um círculo */
+}
+
 
 .nav-brand, .footer-logo {
   width: 30%;
+}
+
+
+.classy-navbar .nav-brand {
+  margin-right: 10px;
+  width: 26%;
 }
 
 ul,
@@ -73,10 +86,6 @@ ol li {
   list-style: none;
 }
 
-img {
-  height: auto;
-  max-width: 100%;
-}
 
 .classy-menu {
   display: flex; /* Adicionando flexbox */
@@ -251,22 +260,6 @@ img {
   height: 80px;
 }
 
-.megamenu {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 100%;
-  background-color: #fff;
-  z-index: 999;
-  padding: 20px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  justify-content: space-between;
-}
 
 
 @-webkit-keyframes spin {
@@ -339,17 +332,23 @@ img {
   top: 0;
   right: -30px;
 }
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .mfp-image-holder .mfp-close,
   .mfp-iframe-holder .mfp-close {
     right: 0;
-  }
+}
+
+
 }
 @media only screen and (max-width: 767px) {
   .mfp-image-holder .mfp-close,
   .mfp-iframe-holder .mfp-close {
     right: 0;
-  }
+}
+
+  
 }
 
 input:focus,
@@ -633,13 +632,6 @@ textarea:focus {
   
 }
 
-#deliciousNav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap; /* Impedindo a quebra para nova linha */
-}
-
 
 @media only screen and (max-width: 767px) {
   .header-area .delicious-main-menu {
@@ -667,6 +659,16 @@ textarea:focus {
 .header-area .delicious-main-menu .classy-navbar .classynav ul li a:focus {
   font-weight: 500;
 }
+
+.user-photo{
+  padding: 5px;
+}
+
+.user-photo:hover {
+  background-color: #f7ce5b;
+  border-radius: 50%;
+}
+
 .header-area .delicious-main-menu .classy-navbar .classynav > ul > li > a {
   text-transform: uppercase;
   padding: 12px 18px 11px;
@@ -800,6 +802,26 @@ textarea:focus {
     height: 650px;
   }
 }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-brand {
+    max-width: 25%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container-menu {
+    max-width: 95%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .container-menu {
+    max-width: 90%;
+  }
+}
+
+
 .hero-slides .single-hero-slide .hero-slides-content {
   position: relative;
   z-index: 1;
@@ -985,11 +1007,24 @@ textarea:focus {
   color: #f7ce5b;
 }
 .single-best-receipe-area .receipe-content .ratings i {
-  font-size: 11px;
+  font-size: 20px;
   color: #f7b05b;
   display: inline-block;
   padding: 0 1px;
 }
+
+#starIcon {
+  cursor: pointer; /* Mostra que é clicável */
+  color: grey;
+  font-size: 30px;
+  display: inline-block;
+  padding: 0 1px;
+}
+
+#starIcon.selected {
+  color: #f7b05b;
+}
+
 
 /* :: 9.0 Cta Area */
 .cta-area {
@@ -1525,7 +1560,7 @@ textarea:focus {
 }
 @media only screen and (max-width: 767px) {
   .footer-area .footer-logo {
-    max-width: 90px;
+    max-width: 80px;
   }
 }
 
