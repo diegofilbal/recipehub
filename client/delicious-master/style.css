@@ -981,6 +981,7 @@ textarea:focus {
   position: relative;
   z-index: 1;
   padding-bottom: 50px;
+  padding-top: 30px;
 }
 
 .single-best-receipe-area {
