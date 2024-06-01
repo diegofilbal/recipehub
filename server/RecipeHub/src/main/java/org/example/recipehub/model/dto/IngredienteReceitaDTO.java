@@ -5,7 +5,6 @@ import org.example.recipehub.model.Medida;
 public class IngredienteReceitaDTO {
 
     private Long id;
-
     private String nome;
     private float quantidade;
     private Medida medida;
