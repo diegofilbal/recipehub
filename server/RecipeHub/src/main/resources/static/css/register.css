@@ -1,0 +1,123 @@
+.form-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    color: #9B8816;
+    font-size: 16px;
+}
+.form-label {
+    margin-bottom: 8px;
+}
+.form-input, .form-textarea, .form-select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    width: 100%;
+    outline: none;
+}
+
+#modoPreparo {
+    height: 10rem;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    border: 1px solid #317B22; 
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(49, 123, 34, 0.3); 
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.form-button {
+    color: white;
+    background-color: #9B8816;
+    border: 1.5px solid #9B8816;
+    font-size: 16px;
+    border-radius: 50%;
+    padding: 5px 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.form-button:hover {
+    background-color: #BCA415;
+    border-color: #BCA415;
+}
+.remove {
+    color: white;
+    background-color: #BC1515;
+    border: 1.5px solid #BC1515;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 5px 13px;
+}
+
+.remove:hover {
+    background-color: #C03F3F;
+    border-color: #C03F3F;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ingredient-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.span-and-btn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.ingrediente  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 18px;
+}
+.ingrediente input[type="text"],
+.ingrediente input[type="number"] {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+    
+}
+
+.ingrediente input[type="text"]:focus, .ingrediente input[type="number"]:focus {
+    border: 1px solid #317B22; 
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(49, 123, 34, 0.3); 
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .form-container {
+        padding: 30px;
+    }
+    .form-button {
+        font-size: 18px;
+    }
+}

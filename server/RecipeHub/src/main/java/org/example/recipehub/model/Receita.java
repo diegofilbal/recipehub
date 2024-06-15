@@ -1,31 +1,29 @@
 package org.example.recipehub.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Receita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @CreatedDate
+    private LocalDateTime criadoEm;
+
     @Column(nullable = false)
     private String nome;
 
-
     private String descricao;
 
+    @Column(length = 2000)
     private String modoPreparo;
 
     @Column(nullable = false)
@@ -37,10 +35,14 @@ public class Receita {
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
-    private String observacao;
+    @Column(nullable = false)
+    private int porcoes;
 
     @ManyToOne
     private Usuario usuario;
+
+    @Column(columnDefinition = "boolean default false")
+    private boolean favorito;
 
     public Receita() {
         ingredientes = new ArrayList<>();
@@ -52,6 +54,14 @@ public class Receita {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public LocalDateTime getCriadoEm() {
+        return criadoEm;
+    }
+
+    public void setCriadoEm(LocalDateTime criadoEm) {
+        this.criadoEm = criadoEm;
     }
 
     public String getNome() {
@@ -102,12 +112,12 @@ public class Receita {
         this.categoria = categoria;
     }
 
-    public String getObservacao() {
-        return observacao;
+    public int getPorcoes() {
+        return porcoes;
     }
 
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
+    public void setPorcoes(int porcoes) {
+        this.porcoes = porcoes;
     }
 
     public Usuario getUsuario() {
@@ -116,5 +126,13 @@ public class Receita {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public boolean isFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(boolean favorito) {
+        this.favorito = favorito;
     }
 }

@@ -50,6 +50,14 @@ public class IngredienteReceita {
         this.ingrediente = ingrediente;
     }
 
+    public Receita getReceita() {
+        return receita;
+    }
+
+    public void setReceita(Receita receita) {
+        this.receita = receita;
+    }
+
     public float getQuantidade() {
         return quantidade;
     }

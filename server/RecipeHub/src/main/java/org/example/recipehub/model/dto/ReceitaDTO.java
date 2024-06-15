@@ -12,7 +12,9 @@ public class ReceitaDTO {
     private int tempoEstimado;
     private List<IngredienteReceitaDTO> ingredientes;
     private Categoria categoria;
-    private String observacao;
+
+    private int porcoes;
+
     private Long usuarioId;
 
     public ReceitaDTO() {}
@@ -20,7 +22,7 @@ public class ReceitaDTO {
 
     public ReceitaDTO(Long id, String nome, String descricao, String modoPreparo,
                       int tempoEstimado, List<IngredienteReceitaDTO> ingredientes,
-                      Categoria categoria, String observacao, Long usuarioId) {
+                      Categoria categoria, int porcoes, Long usuarioId) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -28,7 +30,7 @@ public class ReceitaDTO {
         this.tempoEstimado = tempoEstimado;
         this.ingredientes = ingredientes;
         this.categoria = categoria;
-        this.observacao = observacao;
+        this.porcoes = porcoes;
         this.usuarioId = usuarioId;
     }
 
@@ -88,12 +90,12 @@ public class ReceitaDTO {
         this.categoria = categoria;
     }
 
-    public String getObservacao() {
-        return observacao;
+    public int getPorcoes() {
+        return porcoes;
     }
 
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
+    public void setPorcoes(int porcoes) {
+        this.porcoes = porcoes;
     }
 
     public Long getUsuarioId() {
