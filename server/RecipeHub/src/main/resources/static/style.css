@@ -1453,12 +1453,7 @@ textarea:focus {
 }
 .single-preparation-step h4 {
   color: #9B8816;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 60px;
-  flex: 0 0 60px;
-  max-width: 60px;
-  width: 60px;
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

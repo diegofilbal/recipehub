@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>RecipeHub | Receitas </title>
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/img/core-img/load.svg}" />
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/register.css}" />
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <i class="circle-preloader"></i>
+    <img th:src="@{/img/core-img/load.svg}" alt="" />
+</div>
+
+<!-- Search Wrapper -->
+<div class="search-wrapper">
+    <!-- Close Btn -->
+    <div class="close-btn">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- <form action="#" method="post">
+                  <input
+                    type="search"
+                    name="search"
+                    placeholder="Type any keywords..."
+                  />
+                  <button type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ##### Header Area Start ##### -->
+<header class="header-area">
+    <div class="delicious-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container container-menu">
+                <!-- Menu -->
+                <nav
+                        class="classy-navbar justify-content-between"
+                        id="deliciousNav"
+                >
+                    <!-- Logo -->
+                    <a class="nav-brand" href="main.html"
+                    ><img src="/img/core-img/logo.svg" alt=""
+                    /></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                <span class="navbarToggler"
+                ><span></span><span></span><span></span
+                ></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- close btn -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span><span class="bottom"></span>
+                            </div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li><a href="main.html">Home</a></li>
+                                <li>
+                                    <a href="#">Páginas</a>
+                                    <ul class="dropdown">
+                                        <li><a href="main.html">Home</a></li>
+                                        <li><a href="recipes.html">Receitas</a></li>
+                                        <li>
+                                            <a href="#">Categorias</a>
+                                            <ul class="dropdown">
+                                                <li><a href="">Doces</a></li>
+                                                <li><a href="">Salgados</a></li>
+                                                <li><a href="">Bebidas</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- <li><a href="about.html">Sobre</a></li> -->
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Categorias</a>
+                                    <div class="megamenu">
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Doces</li>
+                                            <li><a href="">Ver todas as receitas</a></li>
+                                            <li><a href="">Pesquisar receita</a></li>
+                                            <li><a href="">Cadastrar Receita</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Salgados</li>
+                                            <li><a href="">Ver todas as receitas</a></li>
+                                            <li><a href="">Pesquisar receita</a></li>
+                                            <li><a href="">Cadastrar Receita</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Bebidas</li>
+                                            <li><a href="">Ver todas as receitas</a></li>
+                                            <li><a href="">Pesquisar receita</a></li>
+                                            <li><a href="">Cadastrar Receita</a></li>
+                                        </ul>
+                                        <div class="single-mega cn-col-4">
+                                            <div class="receipe-slider owl-carousel">
+                                                <a href="#"
+                                                ><img src="img/bg-img/bg1.jpg" alt=""
+                                                /></a>
+                                                <a href="#"
+                                                ><img src="img/bg-img/bg6.jpg" alt=""
+                                                /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
+                                <li><a href="recipes.html">Sem carne</a></li>
+                                <li>
+                                    <a href="#">Conta</a>
+                                    <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
+                                    <ul class="dropdown user-dropdown">
+                                        <li><a href="#">Visualizar</a></li>
+                                        <li><a href="index.html">Sair</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+
+                            <!-- Newsletter Form -->
+                            <div class="search-btn">
+                                <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+                            </div>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ##### Header Area End ##### -->
+
+<!-- ##### Breadcumb Area Start ##### -->
+<div
+        class="breadcumb-area bg-img bg-overlay">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-text text-center">
+                    <h2>Cadastro de Receita</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Breadcumb Area End ##### -->
+
+<div class="receipe-post-area section-padding-80">
+
+
+    <!-- Receipe Content Area -->
+    <div class="receipe-content-area">
+
+        <div class="container">
+            <div class="row">
+                <form class="form-container" th:action="@{/receitas/salvar}" th:object="${receita}" method="post">
+
+                    <div>
+                        <label class="form-label" for="usuarioId">UsuarioID(desenvolvimento):</label>
+                        <input th:field="*{usuarioId}" class="form-input" type="number" id="usuarioId" name="usuarioId" required />
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="nome">Nome:</label>
+                        <input th:field="*{nome}"  class="form-input" type="text" id="nome" name="nome" required />
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="categoria">Categoria:</label>
+                        <select th:field="*{categoria}"  class="form-select" id="categoria" name="categoria">
+                            <option value="DOCES">Doces</option>
+                            <option value="SALGADOS">Salgados</option>
+                            <option value="VEGETARIANO">Vegetariano</option>
+                            <option value="FRUTOS_DO_MAR">Frutos do Mar</option>
+                            <option value="PEIXES">Peixes</option>
+                            <option value="CARNES">Carnes</option>
+                            <option value="AVES">Aves</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="descricao">Descrição:</label>
+                        <textarea th:field="*{descricao}" class="form-textarea" id="descricao" name="descricao" required></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label" for="modoPreparo">Modo de Preparo:</label>
+                        <textarea th:field="*{modoPreparo}"  class="form-textarea" id="modoPreparo" name="modoPreparo" required></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label" for="tempoEstimado">Tempo Estimado (minutos):</label>
+                        <input th:field="*{tempoEstimado}"  class="form-input" type="number" id="tempoEstimado" name="tempoEstimado" required />
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="porcoes">Porções:</label>
+                        <input th:field="*{porcoes}" class="form-input" type="number" id="porcoes" name="porcoes" required />
+                    </div>
+
+                    <div id="ingredientes-container" class="ingredient-container">
+                        <div class="span-and-btn">
+                            <span>Ingredientes </span>
+                            <button type="button" class="form-button" onclick="adicionarIngrediente()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="submit" class="btn delicious-btn">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div
+                    class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between"
+            >
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <a href="main.html"
+                    ><img src="img/core-img/logo.png" alt=""
+                    /></a>
+                </div>
+                <!-- Copywrite -->
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    All rights reserved | This template is made with
+                    <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+
+<!-- ##### All Javascript Files ##### -->
+<!-- jQuery-2.2.4 js -->
+<script th:src="@{/js/jquery/jquery-2.2.4.min.js}"></script>
+<!-- Popper js -->
+<script th:src="@{/js/bootstrap/popper.min.js}"></script>
+<!-- Bootstrap js -->
+<script th:src="@{/js/bootstrap/bootstrap.min.js}"></script>
+<!-- All Plugins js -->
+<script th:src="@{/js/plugins/plugins.js}"></script>
+<!-- Active js -->
+<script th:src="@{/js/active.js}"></script>
+<script th:src="@{/js/recipe.js}"></script>
+<script th:src="@{/js/register-receipe.js}"></script>
+</body>
+</html>
