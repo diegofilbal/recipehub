@@ -65,7 +65,7 @@
                         id="deliciousNav"
                 >
                     <!-- Logo -->
-                    <a class="nav-brand" href="main.html"
+                    <a class="nav-brand" th:href="@{/receitas/home}"
                     ><img src="/img/core-img/logo.svg" alt=""
                     /></a>
 
@@ -88,12 +88,12 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="main.html">Home</a></li>
+                                <li><a th:href="@{/receitas/home}">Home</a></li>
                                 <li>
                                     <a href="#">Páginas</a>
                                     <ul class="dropdown">
-                                        <li><a href="main.html">Home</a></li>
-                                        <li><a href="recipes.html">Receitas</a></li>
+                                        <li><a th:href="@{/receitas/home}">Home</a></li>
+                                        <li><a th:href="@{/receitas}">Receitas</a></li>
                                         <li>
                                             <a href="#">Categorias</a>
                                             <ul class="dropdown">
@@ -139,7 +139,7 @@
                                     </div>
                                 </li>
                                 <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
-                                <li><a href="recipes.html">Sem carne</a></li>
+                                <li><a th:href="@{/receitas}">Sem carne</a></li>
                                 <li>
                                     <a href="#">Conta</a>
                                     <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
@@ -259,7 +259,7 @@
             >
                 <!-- Footer Logo -->
                 <div class="footer-logo">
-                    <a href="main.html"
+                    <a th:href="@{/receitas/home}"
                     ><img src="img/core-img/logo.png" alt=""
                     /></a>
                 </div>

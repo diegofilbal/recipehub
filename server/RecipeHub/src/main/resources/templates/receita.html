@@ -64,8 +64,8 @@
                         id="deliciousNav"
                 >
                     <!-- Logo -->
-                    <a class="nav-brand" href="main.html"
-                    ><img src="/img/core-img/logo.svg" alt=""
+                    <a class="nav-brand" th:href="@{/receitas/home}"
+                    ><img th:src="@{/img/core-img/logo.svg}" alt=""
                     /></a>
 
                     <!-- Navbar Toggler -->
@@ -87,12 +87,12 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="main.html">Home</a></li>
+                                <li><a th:href="@{/receitas/home}">Home</a></li>
                                 <li>
                                     <a href="#">Páginas</a>
                                     <ul class="dropdown">
-                                        <li><a href="main.html">Home</a></li>
-                                        <li><a href="recipes.html">Receitas</a></li>
+                                        <li><a th:href="@{/receitas/home}">Home</a></li>
+                                        <li><a th:href="@{/receitas}">Receitas</a></li>
                                         <li>
                                             <a href="#">Categorias</a>
                                             <ul class="dropdown">
@@ -128,17 +128,17 @@
                                         <div class="single-mega cn-col-4">
                                             <div class="receipe-slider owl-carousel">
                                                 <a href="#"
-                                                ><img src="img/bg-img/bg1.jpg" alt=""
+                                                ><img th:src="@{/img/bg-img/bg1.jpg}" alt=""
                                                 /></a>
                                                 <a href="#"
-                                                ><img src="img/bg-img/bg6.jpg" alt=""
+                                                ><img th:src="@{/img/bg-img/bg6.jpg}" alt=""
                                                 /></a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
-                                <li><a href="recipes.html">Sem carne</a></li>
+                                <li><a th:href="@{/receitas}">Sem carne</a></li>
                                 <li>
                                     <a href="#">Conta</a>
                                     <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
@@ -215,7 +215,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <img src="/img/bg-img/bg5.jpg" alt="" />
+                <img th:src="@{/img/bg-img/bg5.jpg}" alt="" />
             </div>
         </div>
     </div>
@@ -289,8 +289,8 @@
             >
                 <!-- Footer Logo -->
                 <div class="footer-logo">
-                    <a href="main.html"
-                    ><img src="img/core-img/logo.png" alt=""
+                    <a th:href="@{/receitas/home}"
+                    ><img th:src="@{/img/core-img/logo.png}" alt=""
                     /></a>
                 </div>
                 <!-- Copywrite -->

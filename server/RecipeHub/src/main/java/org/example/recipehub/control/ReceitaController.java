@@ -3,18 +3,11 @@ package org.example.recipehub.control;
 import org.example.recipehub.model.Receita;
 import org.example.recipehub.model.dto.PesquisaDTO;
 import org.example.recipehub.model.dto.ReceitaDTO;
-import org.example.recipehub.model.dto.UsuarioDTO;
 import org.example.recipehub.service.ReceitaService;
-import org.example.recipehub.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.sql.SQLException;
-import java.util.List;
 
 @Controller
 @RequestMapping("/receitas")
@@ -60,5 +53,10 @@ public class ReceitaController {
     public String favoritar(@PathVariable Long id) {
         receitaService.favoritar(id);
         return "redirect:/receitas/" + id;
+    }
+
+    @GetMapping("/home")
+    public String home(){
+        return "home";
     }
 }
