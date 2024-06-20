@@ -65,7 +65,7 @@
               id="deliciousNav"
             >
               <!-- Logo -->
-              <a class="nav-brand" th:href="home"
+              <a class="nav-brand" th:href="@{/}"
                 ><img th:src="@{/img/core-img/logo.svg}" alt=""
               /></a>
 
@@ -86,18 +86,22 @@
                 <!-- Nav Start -->
                 <div class="classynav">
                   <ul>
-                    <li class="active"><a th:href="home">Home</a></li>
+                    <li class="active"><a th:href="@{/}">Home</a></li>
                     <li>
                       <a href="#">Páginas</a>
                       <ul class="dropdown">
-                        <li><a th:href="home">Home</a></li>
+                        <li><a th:href="@{/}">Home</a></li>
                         <li><a th:href="@{/receitas}">Receitas</a></li>
                         <li>
                           <a href="#">Categorias</a>
                           <ul class="dropdown">
-                            <li><a href="">Doces</a></li>
-                            <li><a href="">Salgados</a></li>
-                            <li><a href="">Bebidas</a></li>
+                            <li><a th:href="@{/receitas?categoria=DOCES}">Doces</a></li>
+                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Salgados</a></li>
+                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
+                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
+                            <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
+                            <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
+                            <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
                           </ul>
                         </li>
                         <!-- <li><a href="about.html">Sobre</a></li> -->
@@ -109,21 +113,45 @@
                         <div class="megamenu">
                           <ul class="single-mega cn-col-4">
                             <li class="title">Doces</li>
-                            <li><a href="">Ver todas as receitas</a></li>
-                            <li><a href="">Pesquisar receita</a></li>
-                            <li><a href="">Cadastrar Receita</a></li>
+                            <li><a th:href="@{/receitas?categoria=DOCES}">Ver todas as receitas</a></li>
+                            <li><a th:href="@{/receitas?categoria=DOCES}">Pesquisar receita</a></li>
+                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
                           </ul>
                           <ul class="single-mega cn-col-4">
                             <li class="title">Salgados</li>
-                            <li><a href="">Ver todas as receitas</a></li>
-                            <li><a href="">Pesquisar receita</a></li>
-                            <li><a href="">Cadastrar Receita</a></li>
+                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Ver todas as receitas</a></li>
+                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Pesquisar receita</a></li>
+                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
                           </ul>
                           <ul class="single-mega cn-col-4">
-                            <li class="title">Bebidas</li>
-                            <li><a href="">Ver todas as receitas</a></li>
-                            <li><a href="">Pesquisar receita</a></li>
-                            <li><a href="">Cadastrar Receita</a></li>
+                            <li class="title">Vegetariano</li>
+                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Ver todas as receitas</a></li>
+                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Pesquisar receita</a></li>
+                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
+                          </ul>
+                          <ul class="single-mega cn-col-4">
+                            <li class="title">Frutos do Mar</li>
+                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Ver todas as receitas</a></li>
+                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Pesquisar receita</a></li>
+                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
+                          </ul>
+                          <ul class="single-mega cn-col-4">
+                            <li class="title">Peixes</li>
+                            <li><a th:href="@{/receitas?categoria=PEIXES}">Ver todas as receitas</a></li>
+                            <li><a th:href="@{/receitas?categoria=PEIXES}">Pesquisar receita</a></li>
+                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
+                          </ul>
+                          <ul class="single-mega cn-col-4">
+                            <li class="title">Carnes</li>
+                            <li><a th:href="@{/receitas?categoria=CARNES}">Ver todas as receitas</a></li>
+                            <li><a th:href="@{/receitas?categoria=CARNES}">Pesquisar receita</a></li>
+                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
+                          </ul>
+                          <ul class="single-mega cn-col-4">
+                            <li class="title">Aves</li>
+                            <li><a th:href="@{/receitas?categoria=AVES}">Ver todas as receitas</a></li>
+                            <li><a th:href="@{/receitas?categoria=AVES}">Pesquisar receita</a></li>
+                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
                           </ul>
                           <div class="single-mega cn-col-4">
                             <div class="receipe-slider owl-carousel">
@@ -138,7 +166,7 @@
                         </div>
                       </li>
                     <li><a th:href="@{/receitas}">Receitas</a></li>
-                    <li><a th:href="@{/receitas}">Sem carne</a></li>
+                    <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
 
                     <!-- User Icon for desktop -->
                     <li>
@@ -328,122 +356,19 @@
         <div class="row">
           <div class="col-12">
             <div class="section-heading">
-              <h3>As Melhores Receitas</h3>
+              <h3>Últimas Receitas</h3>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <!-- Single Best Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" th:each="receita : ${ultimasReceitas}">
             <div class="single-best-receipe-area mb-30">
-              <img th:src="@{/img/bg-img/r1.jpg}" alt="" />
+              <img th:src="@{/img/bg-img/dinner-placeholder.png}" alt="" />
               <div class="receipe-content">
-                <a href="receipe-post.html">
-                  <h5>Sushi</h5>
+                <a th:href="@{'/receitas/' + ${receita.id}}">
+                  <h5 th:text="${receita.nome}">Nome da Receita</h5>
                 </a>
-                <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <!-- <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Single Best Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-best-receipe-area mb-30">
-              <img th:src="@{/img/bg-img/r2.jpg}" alt="" />
-              <div class="receipe-content">
-                <a href="receipe-post.html">
-                  <h5>Hambúrguer Caseiro</h5>
-                </a>
-                <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <!-- <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Single Best Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-best-receipe-area mb-30">
-              <img th:src="@{/img/bg-img/r3.jpg}" alt="" />
-              <div class="receipe-content">
-                <a href="receipe-post.html">
-                  <h5>Smoothie Vegano</h5>
-                </a>
-                <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <!-- <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Single Best Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-best-receipe-area mb-30">
-              <img th:src="@{/img/bg-img/r4.jpg}" alt="" />
-              <div class="receipe-content">
-                <a href="receipe-post.html">
-                  <h5>Sopa de Jerimum</h5>
-                </a>
-                <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <!-- <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Single Best Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-best-receipe-area mb-30">
-              <img th:src="@{/img/bg-img/r5.jpg}" alt="" />
-              <div class="receipe-content">
-                <a href="receipe-post.html">
-                  <h5>Café da Manhã Caseiro</h5>
-                </a>
-                <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <!-- <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Single Best Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-best-receipe-area mb-30">
-              <img th:src="@{/img/bg-img/r6.jpg}" alt="" />
-              <div class="receipe-content">
-                <a href="receipe-post.html">
-                  <h5>Sobremesa de Frutas Saudável</h5>
-                </a>
-                <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <!-- <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i> -->
-                </div>
               </div>
             </div>
           </div>
@@ -481,211 +406,28 @@
     <!-- ##### Small Receipe Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
       <div class="container">
+
+        <div class="row">
+          <div class="col-12">
+            <div class="section-heading">
+              <h3>Receitas Favoritas</h3>
+            </div>
+          </div>
+        </div>
+
         <div class="row">
           <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" th:each="receita : ${receitasFavoritas}">
             <div class="single-small-receipe-area d-flex">
               <!-- Receipe Thumb -->
               <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr1.jpg}" alt="" />
+                <img th:src="@{/img/bg-img/dinner-placeholder-crop.png}" alt="" />
               </div>
               <!-- Receipe Content -->
               <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Massa Italiana Caseira</h5>
-                </a>
-                <!-- <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-small-receipe-area d-flex">
-              <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr2.jpg}" alt="" />
-              </div>
-              <!-- Receipe Content -->
-              <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Panetone</h5>
-                </a>
-                <!-- <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-small-receipe-area d-flex">
-              <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr3.jpg}" alt="" />
-              </div>
-              <!-- Receipe Content -->
-              <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Ostras salgadas</h5>
-                </a>
-                <!-- <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-small-receipe-area d-flex">
-              <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr4.jpg}" alt="" />
-              </div>
-              <!-- Receipe Content -->
-              <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Salada de Frutas</h5>
-                </a>
-                <!-- <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-small-receipe-area d-flex">
-              <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr5.jpg}" alt="" />
-              </div>
-              <!-- Receipe Content -->
-              <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Macarrones</h5>
-                </a>
-                <!-- <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-small-receipe-area d-flex">
-              <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr6.jpg}" alt="" />
-              </div>
-              <!-- Receipe Content -->
-              <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Tartar de Chocolate</h5>
-                </a>
-                <!-- <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-small-receipe-area d-flex">
-              <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr7.jpg}" alt="" />
-              </div>
-              <!-- Receipe Content -->
-              <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Sobremesa de Frutas Vermelhas</h5>
-                </a>
-                <!-- <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-small-receipe-area d-flex">
-              <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr8.jpg}" alt="" />
-              </div>
-              <!-- Receipe Content -->
-              <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Zucchini Picante Grelhado</h5>
-                </a>
-                <!-- <div class="ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Receipe Area -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-small-receipe-area d-flex">
-              <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
-                <img th:src="@{/img/bg-img/sr9.jpg}" alt="" />
-              </div>
-              <!-- Receipe Content -->
-              <div class="receipe-content">
-                <span>04 de Janeiro de 2018</span>
-                <a href="receipe-post.html">
-                  <h5>Salada de Frango</h5>
+                <span th:text="'Criado em ' + ${#temporals.format(receita.criadoEm, 'dd/MM/yyyy HH:mm:ss')}"></span>
+                <a th:href="@{'/receitas/' + ${receita.id}}">
+                  <h5 th:text="${receita.nome}">Massa Italiana Caseira</h5>
                 </a>
                 <!-- <div class="ratings">
                   <i class="fa fa-star" aria-hidden="true"></i>
@@ -779,7 +521,7 @@
             </div> -->
             <!-- Footer Logo -->
             <div class="footer-logo">
-              <a th:href="home"
+              <a th:href="@{/}"
                 ><img th:src="@{/img/core-img/logo.svg}" alt=""
               /></a>
             </div>

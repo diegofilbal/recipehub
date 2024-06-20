@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface ReceitaRepository extends JpaRepository<Receita, Long> {
     List<Receita> findByCategoriaAndNomeContainingIgnoreCase(Categoria categoria, String nome);
+    List<Receita> findTop6ByOrderByCriadoEmDesc();
+    List<Receita> findTop6ByFavoritoTrueOrderByCriadoEmDesc();
 }

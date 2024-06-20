@@ -55,6 +55,8 @@
 
 <!-- ##### Header Area Start ##### -->
 <header class="header-area">
+
+    <!-- Navbar Area -->
     <div class="delicious-main-menu">
         <div class="classy-nav-container breakpoint-off">
             <div class="container container-menu">
@@ -64,15 +66,13 @@
                         id="deliciousNav"
                 >
                     <!-- Logo -->
-                    <a class="nav-brand" th:href="@{/receitas/home}"
+                    <a class="nav-brand" th:href="@{/}"
                     ><img th:src="@{/img/core-img/logo.svg}" alt=""
                     /></a>
 
-                    <!-- Navbar Toggler -->
+                    <!-- Toggle -->
                     <div class="classy-navbar-toggler">
-                <span class="navbarToggler"
-                ><span></span><span></span><span></span
-                ></span>
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
                     </div>
 
                     <!-- Menu -->
@@ -87,43 +87,72 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a th:href="@{/receitas/home}">Home</a></li>
+                                <li class="active"><a th:href="@{/}">Home</a></li>
                                 <li>
                                     <a href="#">Páginas</a>
                                     <ul class="dropdown">
-                                        <li><a th:href="@{/receitas/home}">Home</a></li>
+                                        <li><a th:href="@{/}">Home</a></li>
                                         <li><a th:href="@{/receitas}">Receitas</a></li>
                                         <li>
                                             <a href="#">Categorias</a>
                                             <ul class="dropdown">
-                                                <li><a href="">Doces</a></li>
-                                                <li><a href="">Salgados</a></li>
-                                                <li><a href="">Bebidas</a></li>
+                                                <li><a th:href="@{/receitas?categoria=DOCES}">Doces</a></li>
+                                                <li><a th:href="@{/receitas?categoria=SALGADOS}">Salgados</a></li>
+                                                <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
+                                                <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
+                                                <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
+                                                <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
+                                                <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
                                             </ul>
                                         </li>
                                         <!-- <li><a href="about.html">Sobre</a></li> -->
                                     </ul>
                                 </li>
                                 <li>
+                                <li>
                                     <a href="#">Categorias</a>
                                     <div class="megamenu">
                                         <ul class="single-mega cn-col-4">
                                             <li class="title">Doces</li>
-                                            <li><a href="">Ver todas as receitas</a></li>
-                                            <li><a href="">Pesquisar receita</a></li>
-                                            <li><a href="">Cadastrar Receita</a></li>
+                                            <li><a th:href="@{/receitas?categoria=DOCES}">Ver todas as receitas</a></li>
+                                            <li><a th:href="@{/receitas?categoria=DOCES}">Pesquisar receita</a></li>
+                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
                                         </ul>
                                         <ul class="single-mega cn-col-4">
                                             <li class="title">Salgados</li>
-                                            <li><a href="">Ver todas as receitas</a></li>
-                                            <li><a href="">Pesquisar receita</a></li>
-                                            <li><a href="">Cadastrar Receita</a></li>
+                                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Ver todas as receitas</a></li>
+                                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Pesquisar receita</a></li>
+                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
                                         </ul>
                                         <ul class="single-mega cn-col-4">
-                                            <li class="title">Bebidas</li>
-                                            <li><a href="">Ver todas as receitas</a></li>
-                                            <li><a href="">Pesquisar receita</a></li>
-                                            <li><a href="">Cadastrar Receita</a></li>
+                                            <li class="title">Vegetariano</li>
+                                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Ver todas as receitas</a></li>
+                                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Pesquisar receita</a></li>
+                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Frutos do Mar</li>
+                                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Ver todas as receitas</a></li>
+                                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Pesquisar receita</a></li>
+                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Peixes</li>
+                                            <li><a th:href="@{/receitas?categoria=PEIXES}">Ver todas as receitas</a></li>
+                                            <li><a th:href="@{/receitas?categoria=PEIXES}">Pesquisar receita</a></li>
+                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Carnes</li>
+                                            <li><a th:href="@{/receitas?categoria=CARNES}">Ver todas as receitas</a></li>
+                                            <li><a th:href="@{/receitas?categoria=CARNES}">Pesquisar receita</a></li>
+                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Aves</li>
+                                            <li><a th:href="@{/receitas?categoria=AVES}">Ver todas as receitas</a></li>
+                                            <li><a th:href="@{/receitas?categoria=AVES}">Pesquisar receita</a></li>
+                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
                                         </ul>
                                         <div class="single-mega cn-col-4">
                                             <div class="receipe-slider owl-carousel">
@@ -137,8 +166,10 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
-                                <li><a th:href="@{/receitas}">Sem carne</a></li>
+                                <li><a th:href="@{/receitas}">Receitas</a></li>
+                                <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
+
+                                <!-- User Icon for desktop -->
                                 <li>
                                     <a href="#">Conta</a>
                                     <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
@@ -147,17 +178,27 @@
                                         <li><a href="index.html">Sair</a></li>
                                     </ul>
                                 </li>
+
                             </ul>
-
-
 
                             <!-- Newsletter Form -->
                             <div class="search-btn">
                                 <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+                                <!-- <i class="fa fa-user" aria-hidden="true">Conta </i> -->
                             </div>
+
+                            <!-- <div class="user-photo">
+                              <a href="#"><img src="img/core-img/icon.jpeg" alt="User Photo" class="user-photo-img"></a>
+                              <ul class="dropdown user-dropdown">
+                                <li><a href="#">Visualizar Conta</a></li>
+                                <li><a href="#">Sair</a></li>
+                              </ul>
+                            </div> -->
+
                         </div>
                         <!-- Nav End -->
                     </div>
+
                 </nav>
             </div>
         </div>
@@ -287,10 +328,19 @@
             <div
                     class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between"
             >
+                <!-- Footer Social Info -->
+                <!-- <div class="footer-social-info text-right">
+                  <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div> -->
                 <!-- Footer Logo -->
                 <div class="footer-logo">
-                    <a th:href="@{/receitas/home}"
-                    ><img th:src="@{/img/core-img/logo.png}" alt=""
+                    <a th:href="@{/}"
+                    ><img th:src="@{/img/core-img/logo.svg}" alt=""
                     /></a>
                 </div>
                 <!-- Copywrite -->

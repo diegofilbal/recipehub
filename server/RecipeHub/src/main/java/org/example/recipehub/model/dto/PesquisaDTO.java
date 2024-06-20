@@ -9,6 +9,16 @@ public class PesquisaDTO {
 
     public PesquisaDTO() {}
 
+    public PesquisaDTO(String categoria, String nome) {
+        if(categoria != null) {
+            this.categoria = Categoria.valueOf(categoria);
+        }
+
+        if(nome != null) {
+            this.nome = nome;
+        }
+    }
+
     public Categoria getCategoria() {
         return categoria;
     }
