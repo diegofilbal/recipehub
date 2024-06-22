@@ -1,12 +1,10 @@
 package org.example.recipehub.service;
 
 import jakarta.persistence.EntityNotFoundException;
-import org.example.recipehub.model.Ingrediente;
-import org.example.recipehub.model.Receita;
-import org.example.recipehub.model.IngredienteReceita;
-import org.example.recipehub.model.Usuario;
+import org.example.recipehub.model.*;
 import org.example.recipehub.model.dto.PesquisaDTO;
 import org.example.recipehub.model.dto.ReceitaDTO;
+import org.example.recipehub.repository.CustomReceitaRepository;
 import org.example.recipehub.repository.ReceitaRepository;
 import org.example.recipehub.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +21,24 @@ public class ReceitaService {
     private ReceitaRepository receitaRepository;
 
     @Autowired
+    private CustomReceitaRepository customReceitaRepository;
+
+    @Autowired
     private UsuarioRepository usuarioRepository;
 
     @Autowired
     private IngredienteService ingredienteService;
 
-    public List<Receita> findAll() {
-        return receitaRepository.findAll();
+    public List<Receita> findAll(String categoria, String nome) {
+        return customReceitaRepository.findReceitasByCategoriaAndNome(categoria, nome);
+    }
+
+    public List<Receita> findUltimasReceitas() {
+        return receitaRepository.findTop6ByOrderByCriadoEmDesc();
+    }
+
+    public List<Receita> findReceitasFavoritas() {
+        return receitaRepository.findTop6ByFavoritoTrueOrderByCriadoEmDesc();
     }
 
     public Receita findById(Long id) {
@@ -62,15 +71,14 @@ public class ReceitaService {
         return receitaRepository.save(receita);
     }
 
-    public List<Receita> buscar(PesquisaDTO pesquisaDTO) {
-
-        return receitaRepository.findByCategoriaAndNomeContainingIgnoreCase(pesquisaDTO.getCategoria(), pesquisaDTO.getNome());
-    }
-
     public void favoritar(Long id) {
         Receita receita = this.findById(id);
         receita.setFavorito(!receita.isFavorito());
         receitaRepository.save(receita);
+    }
+
+    public List<Receita> findReceitasByLogin(String login) {
+        return receitaRepository.findByUsuarioLogin(login);
     }
 }
 

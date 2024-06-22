@@ -1,20 +1,15 @@
 package org.example.recipehub.control;
 
+import org.example.recipehub.model.Categoria;
 import org.example.recipehub.model.Receita;
 import org.example.recipehub.model.dto.PesquisaDTO;
 import org.example.recipehub.model.dto.ReceitaDTO;
-import org.example.recipehub.model.dto.UsuarioDTO;
 import org.example.recipehub.service.ReceitaService;
-import org.example.recipehub.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.sql.SQLException;
-import java.util.List;
 
 @Controller
 @RequestMapping("/receitas")
@@ -24,16 +19,11 @@ public class ReceitaController {
     private ReceitaService receitaService;
 
     @GetMapping
-    public String findAll(Model model){
-        model.addAttribute("pesquisa", new PesquisaDTO());
-        model.addAttribute("receitas", receitaService.findAll());
-        return "receitas";
-    }
-
-    @PostMapping
-    public String search(@ModelAttribute PesquisaDTO pesquisa, Model model){
-        model.addAttribute("pesquisa", new PesquisaDTO());
-        model.addAttribute("receitas", receitaService.buscar(pesquisa));
+    public String findAll(@RequestParam(required = false) String categoria,
+                          @RequestParam(required = false) String nome,
+                          Model model){
+        model.addAttribute("pesquisa", new PesquisaDTO(categoria, nome));
+        model.addAttribute("receitas", receitaService.findAll(categoria, nome));
         return "receitas";
     }
 

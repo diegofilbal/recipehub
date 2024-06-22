@@ -7,6 +7,7 @@ public enum Categoria {
     FRUTOS_DO_MAR("Frutos do Mar"),
     PEIXES("Peixes"),
     CARNES("Carnes"),
+    MASSAS("Massas"),
     AVES("Aves");
 
     private String descricao;

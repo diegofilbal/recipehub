@@ -55,24 +55,24 @@
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
+
+      <!-- Navbar Area -->
       <div class="delicious-main-menu">
         <div class="classy-nav-container breakpoint-off">
           <div class="container container-menu">
             <!-- Menu -->
             <nav
-              class="classy-navbar justify-content-between"
-              id="deliciousNav"
+                    class="classy-navbar justify-content-between"
+                    id="deliciousNav"
             >
               <!-- Logo -->
-              <a class="nav-brand" href="main.html"
-                ><img src="img/core-img/logo.svg" alt=""
+              <a class="nav-brand" th:href="@{/}"
+              ><img th:src="@{/img/core-img/logo.svg}" alt=""
               /></a>
 
-              <!-- Navbar Toggler -->
+              <!-- Toggle -->
               <div class="classy-navbar-toggler">
-                <span class="navbarToggler"
-                  ><span></span><span></span><span></span
-                ></span>
+                <span class="navbarToggler"><span></span><span></span><span></span></span>
               </div>
 
               <!-- Menu -->
@@ -87,58 +87,23 @@
                 <!-- Nav Start -->
                 <div class="classynav">
                   <ul>
-                    <li><a href="main.html">Home</a></li>
+                    <li class="active"><a th:href="@{/}">Home</a></li>
                     <li>
-                      <a href="#">Páginas</a>
-                      <ul class="dropdown">
-                        <li><a href="main.html">Home</a></li>
-                        <li><a href="recipes.html">Receitas</a></li>
-                        <li>
-                          <a href="#">Categorias</a>
-                          <ul class="dropdown">
-                            <li><a href="">Doces</a></li>
-                            <li><a href="">Salgados</a></li>
-                            <li><a href="">Bebidas</a></li>
-                          </ul>
-                        </li>
-                        <!-- <li><a href="about.html">Sobre</a></li> -->
-                      </ul>
-                    </li>
                     <li>
                       <a href="#">Categorias</a>
-                      <div class="megamenu">
-                        <ul class="single-mega cn-col-4">
-                          <li class="title">Doces</li>
-                          <li><a href="">Ver todas as receitas</a></li>
-                          <li><a href="">Pesquisar receita</a></li>
-                          <li><a href="">Cadastrar Receita</a></li>
-                        </ul>
-                        <ul class="single-mega cn-col-4">
-                          <li class="title">Salgados</li>
-                          <li><a href="">Ver todas as receitas</a></li>
-                          <li><a href="">Pesquisar receita</a></li>
-                          <li><a href="">Cadastrar Receita</a></li>
-                        </ul>
-                        <ul class="single-mega cn-col-4">
-                          <li class="title">Bebidas</li>
-                          <li><a href="">Ver todas as receitas</a></li>
-                          <li><a href="">Pesquisar receita</a></li>
-                          <li><a href="">Cadastrar Receita</a></li>
-                        </ul>
-                        <div class="single-mega cn-col-4">
-                          <div class="receipe-slider owl-carousel">
-                            <a href="#"
-                              ><img src="img/bg-img/bg1.jpg" alt=""
-                            /></a>
-                            <a href="#"
-                              ><img src="img/bg-img/bg6.jpg" alt=""
-                            /></a>
-                          </div>
-                        </div>
-                      </div>
+                      <ul class="dropdown">
+                        <li><a th:href="@{/receitas?categoria=DOCES}">Doces</a></li>
+                        <li><a th:href="@{/receitas?categoria=SALGADOS}">Salgados</a></li>
+                        <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
+                        <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
+                        <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
+                        <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
+                        <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
+                      </ul>
                     </li>
-                    <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
-                    <li><a href="recipes.html">Sem carne</a></li>
+                    <li><a th:href="@{/receitas}">Receitas</a></li>
+
+                    <!-- User Icon for desktop -->
                     <li>
                       <a href="#">Conta</a>
                       <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
@@ -147,14 +112,8 @@
                         <li><a href="index.html">Sair</a></li>
                       </ul>
                     </li>
+
                   </ul>
-
-
-
-                  <!-- Newsletter Form -->
-                  <div class="search-btn">
-                    <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
-                  </div>
                 </div>
                 <!-- Nav End -->
               </div>
@@ -184,10 +143,10 @@
       <!-- Receipe Post Search -->
       <div class="receipe-post-search mb-80">
         <div class="container">
-          <form th:action="@{/receitas}" th:object="${pesquisa}" method="post">
+          <form th:action="@{/receitas}" th:object="${pesquisa}" method="get">
             <div class="row">
               <div class="col-12 col-lg-3">
-                <select th:field="*{categoria}" name="categoria" id="categoria">
+                <select th:field="*{categoria}" id="categoria">
                   <option value="DOCES">Doces</option>
                   <option value="SALGADOS">Salgados</option>
                   <option value="VEGETARIANO">Vegetariano</option>
@@ -201,12 +160,8 @@
                 <input th:field="*{nome}" type="search" name="nome" placeholder="Nome da Receita"/>
               </div>
               <div class="col-12 col-lg-3 text-right">
-                <button type="submit" class="btn delicious-btn">
-                  Pesquisar
-                </button>
-
+                <button type="submit" class="btn delicious-btn">Pesquisar</button>
               </div>
-
             </div>
           </form>
         </div>
@@ -219,7 +174,7 @@
 
         <div class="container">
           <div class="row">
-            <section class="best-receipe-area">
+            <section class="best-receipe-area" style="width: 100%; margin: 0 15px;">
 
                 <div class="row">
                     <div class="col-12 text-right" style="margin-bottom: 30px;">
@@ -229,21 +184,27 @@
                     </div>
                 </div>
 
-                  <div class="row">
-                    <div class="col-12 col-sm-6 col-lg-4" th:each="receita : ${receitas}">
-                      <div class="single-best-receipe-area mb-30">
-                        <img src="img/bg-img/dinner-placeholder.png" alt="" />
-                        <div class="receipe-content">
-                          <a th:href="@{'/receitas/' + ${receita.id}}">
-                            <h5 th:text="${receita.nome}">Nome da Receita</h5>
-                          </a>
-                          <div th:if="${receita.favorito}" class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                          </div>
+                <div class="row" th:if="${#lists.isEmpty(receitas)}">
+                  <div class="col-12">
+                      <h4>Não foram encontradas receitas.</h4>
+                  </div>
+                </div>
+
+                <div class="row" th:unless="${#lists.isEmpty(receitas)}">
+                  <div class="col-12 col-sm-6 col-lg-4" th:each="receita : ${receitas}">
+                    <div class="single-best-receipe-area mb-30">
+                      <img th:src="@{/img/bg-img/dinner-placeholder.png}" alt="" />
+                      <div class="receipe-content">
+                        <a th:href="@{'/receitas/' + ${receita.id}}">
+                          <h5 th:text="${receita.nome}">Nome da Receita</h5>
+                        </a>
+                        <div th:if="${receita.favorito}" class="ratings">
+                          <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
               </section>
 
             </div>
@@ -259,12 +220,21 @@
       <div class="container h-100">
         <div class="row h-100">
           <div
-            class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between"
+                  class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between"
           >
+            <!-- Footer Social Info -->
+            <!-- <div class="footer-social-info text-right">
+              <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </div> -->
             <!-- Footer Logo -->
             <div class="footer-logo">
-              <a href="main.html"
-                ><img src="img/core-img/logo.png" alt=""
+              <a th:href="@{/}"
+              ><img th:src="@{/img/core-img/logo.svg}" alt=""
               /></a>
             </div>
             <!-- Copywrite -->
