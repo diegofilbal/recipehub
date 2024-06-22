@@ -18,6 +18,8 @@ public class HomeController {
     public String home(Model model){
         model.addAttribute("ultimasReceitas", receitaService.findUltimasReceitas());
         model.addAttribute("receitasFavoritas", receitaService.findReceitasFavoritas());
+        model.addAttribute("receitasPadrao", receitaService.findReceitasByLogin("RecipeHub"));
+
         return "home";
     }
 }

@@ -76,5 +76,9 @@ public class ReceitaService {
         receita.setFavorito(!receita.isFavorito());
         receitaRepository.save(receita);
     }
+
+    public List<Receita> findReceitasByLogin(String login) {
+        return receitaRepository.findByUsuarioLogin(login);
+    }
 }
 

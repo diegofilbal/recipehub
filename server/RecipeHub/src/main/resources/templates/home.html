@@ -88,85 +88,20 @@
                   <ul>
                     <li class="active"><a th:href="@{/}">Home</a></li>
                     <li>
-                      <a href="#">Páginas</a>
-                      <ul class="dropdown">
-                        <li><a th:href="@{/}">Home</a></li>
-                        <li><a th:href="@{/receitas}">Receitas</a></li>
-                        <li>
-                          <a href="#">Categorias</a>
-                          <ul class="dropdown">
-                            <li><a th:href="@{/receitas?categoria=DOCES}">Doces</a></li>
-                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Salgados</a></li>
-                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
-                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
-                            <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
-                            <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
-                            <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
-                          </ul>
-                        </li>
-                        <!-- <li><a href="about.html">Sobre</a></li> -->
-                      </ul>
-                    </li>
-                    <li>
                       <li>
                         <a href="#">Categorias</a>
-                        <div class="megamenu">
-                          <ul class="single-mega cn-col-4">
-                            <li class="title">Doces</li>
-                            <li><a th:href="@{/receitas?categoria=DOCES}">Ver todas as receitas</a></li>
-                            <li><a th:href="@{/receitas?categoria=DOCES}">Pesquisar receita</a></li>
-                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                          </ul>
-                          <ul class="single-mega cn-col-4">
-                            <li class="title">Salgados</li>
-                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Ver todas as receitas</a></li>
-                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Pesquisar receita</a></li>
-                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                          </ul>
-                          <ul class="single-mega cn-col-4">
-                            <li class="title">Vegetariano</li>
-                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Ver todas as receitas</a></li>
-                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Pesquisar receita</a></li>
-                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                          </ul>
-                          <ul class="single-mega cn-col-4">
-                            <li class="title">Frutos do Mar</li>
-                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Ver todas as receitas</a></li>
-                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Pesquisar receita</a></li>
-                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                          </ul>
-                          <ul class="single-mega cn-col-4">
-                            <li class="title">Peixes</li>
-                            <li><a th:href="@{/receitas?categoria=PEIXES}">Ver todas as receitas</a></li>
-                            <li><a th:href="@{/receitas?categoria=PEIXES}">Pesquisar receita</a></li>
-                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                          </ul>
-                          <ul class="single-mega cn-col-4">
-                            <li class="title">Carnes</li>
-                            <li><a th:href="@{/receitas?categoria=CARNES}">Ver todas as receitas</a></li>
-                            <li><a th:href="@{/receitas?categoria=CARNES}">Pesquisar receita</a></li>
-                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                          </ul>
-                          <ul class="single-mega cn-col-4">
-                            <li class="title">Aves</li>
-                            <li><a th:href="@{/receitas?categoria=AVES}">Ver todas as receitas</a></li>
-                            <li><a th:href="@{/receitas?categoria=AVES}">Pesquisar receita</a></li>
-                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                          </ul>
-                          <div class="single-mega cn-col-4">
-                            <div class="receipe-slider owl-carousel">
-                              <a href="#"
-                                ><img th:src="@{/img/bg-img/bg1.jpg}" alt=""
-                              /></a>
-                              <a href="#"
-                                ><img th:src="@{/img/bg-img/bg6.jpg}" alt=""
-                              /></a>
-                            </div>
-                          </div>
-                        </div>
+                        <ul class="dropdown">
+                          <li><a th:href="@{/receitas?categoria=DOCES}">Doces</a></li>
+                          <li><a th:href="@{/receitas?categoria=SALGADOS}">Salgados</a></li>
+                          <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
+                          <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
+                          <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
+                          <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
+                          <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
+                          <li><a th:href="@{/receitas?categoria=MASSAS}">Massas</a></li>
+                        </ul>
                       </li>
                     <li><a th:href="@{/receitas}">Receitas</a></li>
-                    <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
 
                     <!-- User Icon for desktop -->
                     <li>
@@ -179,25 +114,9 @@
                     </li>
 
                   </ul>
-
-                  <!-- Newsletter Form -->
-                  <div class="search-btn">
-                    <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
-                    <!-- <i class="fa fa-user" aria-hidden="true">Conta </i> -->
-                  </div>
-
-                  <!-- <div class="user-photo">
-                    <a href="#"><img src="img/core-img/icon.jpeg" alt="User Photo" class="user-photo-img"></a>
-                    <ul class="dropdown user-dropdown">
-                      <li><a href="#">Visualizar Conta</a></li>
-                      <li><a href="#">Sair</a></li>
-                    </ul>
-                  </div> -->
-
                 </div>
                 <!-- Nav End -->
               </div>
-
             </nav>
           </div>
         </div>
@@ -208,102 +127,20 @@
     <!-- ##### Hero Area Start ##### -->
     <section class="hero-area">
       <div class="hero-slides owl-carousel">
-        <!-- Single Hero Slide -->
-        <div
-          class="single-hero-slide bg-img"
-          style="background-image: url(/img/bg-img/bg1.jpg)"
-        >
+        <div th:each="receita : ${receitasPadrao}"
+             class="single-hero-slide bg-img"
+             th:style="${'background-image: url(' +
+                       (receita.nome == 'Hambúrguer Caseiro' ? '/img/bg-img/bg1.jpg' :
+                        receita.nome == 'Noodles Chineses' ? '/img/bg-img/bg6.jpg' :
+                        receita.nome == 'Panquecas Doces' ? '/img/bg-img/bg2.jpg' :
+                        '/img/bg-img/default.jpg') + ')'}">
           <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
               <div class="col-9 col-md-9 col-lg-7 col-xl-6">
-                <div
-                  class="hero-slides-content"
-                  data-animation="fadeInUp"
-                  data-delay="100ms"
-                >
-                  <h2 data-animation="fadeInUp" data-delay="300ms">
-                    Hambúrguer Caseiro
-                  </h2>
-                  <p data-animation="fadeInUp" data-delay="700ms">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Cras tristique nisl vitae luctus sollicitudin. Fusce
-                    consectetur sem eget dui tristique, ac posuere arcu varius.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn delicious-btn"
-                    data-animation="fadeInUp"
-                    data-delay="1000ms"
-                    >Ver Receita</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single Hero Slide -->
-        <div
-          class="single-hero-slide bg-img"
-          style="background-image: url(/img/bg-img/bg6.jpg)"
-        >
-          <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-              <div class="col-9 col-md-9 col-lg-7 col-xl-6">
-                <div
-                  class="hero-slides-content"
-                  data-animation="fadeInUp"
-                  data-delay="100ms"
-                >
-                  <h2 data-animation="fadeInUp" data-delay="300ms">
-                    Hambúrguer Caseiro
-                  </h2>
-                  <p data-animation="fadeInUp" data-delay="700ms">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Cras tristique nisl vitae luctus sollicitudin. Fusce
-                    consectetur sem eget dui tristique, ac posuere arcu varius.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn delicious-btn"
-                    data-animation="fadeInUp"
-                    data-delay="1000ms"
-                    >Ver Receita</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single Hero Slide -->
-        <div
-          class="single-hero-slide bg-img"
-          style="background-image: url(/img/bg-img/bg7.jpg)"
-        >
-          <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-              <div class="col-9 col-md-9 col-lg-7 col-xl-6">
-                <div
-                  class="hero-slides-content"
-                  data-animation="fadeInUp"
-                  data-delay="100ms"
-                >
-                  <h2 data-animation="fadeInUp" data-delay="300ms">
-                    Hambúrguer Caseiro
-                  </h2>
-                  <p data-animation="fadeInUp" data-delay="700ms">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Cras tristique nisl vitae luctus sollicitudin. Fusce
-                    consectetur sem eget dui tristique, ac posuere arcu varius.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn delicious-btn"
-                    data-animation="fadeInUp"
-                    data-delay="1000ms"
-                    >Ver Receita</a
-                  >
+                <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                  <h2 data-animation="fadeInUp" data-delay="300ms" th:text="${receita.nome}">Nome da Receita</h2>
+                  <p data-animation="fadeInUp" data-delay="700ms" th:text="${receita.descricao}">Descrição da receita</p>
+                  <a th:href="@{'/receitas/' + ${receita.id}}" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">Ver Receita</a>
                 </div>
               </div>
             </div>
@@ -311,43 +148,44 @@
         </div>
       </div>
     </section>
+
     <!-- ##### Hero Area End ##### -->
 
     <!-- ##### Top Category Area Start ##### -->
-    <section class="top-category-area section-padding-80-0">
-      <div class="container">
-        <div class="row">
-          <!-- Top Category Area -->
-          <div class="col-12 col-lg-6">
-            <div class="single-top-category">
-              <img th:src="@{/img/bg-img/bg2.jpg}" alt="" />
-              <!-- Content -->
-              <div class="top-cta-content">
-                <h3>Panquecas Doces</h3>
-                <h6>Simples &amp; Delicioso</h6>
-                <a href="receipe-post.html" class="btn delicious-btn"
-                  >Ver Receita Completa</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Top Category Area -->
-          <div class="col-12 col-lg-6">
-            <div class="single-top-category">
-              <img th:src="@{/img/bg-img/bg3.jpg}" alt="" />
-              <!-- Content -->
-              <div class="top-cta-content">
-                <h3>Noodles Chineses</h3>
-                <h6>Simples &amp; Delicioso</h6>
-                <a href="receipe-post.html" class="btn delicious-btn"
-                  >Ver Receita Completa</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!--    <section class="top-category-area section-padding-80-0">-->
+<!--      <div class="container">-->
+<!--        <div class="row">-->
+<!--          &lt;!&ndash; Top Category Area &ndash;&gt;-->
+<!--          <div class="col-12 col-lg-6">-->
+<!--            <div class="single-top-category">-->
+<!--              <img th:src="@{/img/bg-img/bg2.jpg}" alt="" />-->
+<!--              &lt;!&ndash; Content &ndash;&gt;-->
+<!--              <div class="top-cta-content">-->
+<!--                <h3>Panquecas Doces</h3>-->
+<!--                <h6>Simples &amp; Delicioso</h6>-->
+<!--                <a href="receipe-post.html" class="btn delicious-btn"-->
+<!--                  >Ver Receita Completa</a-->
+<!--                >-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          &lt;!&ndash; Top Category Area &ndash;&gt;-->
+<!--          <div class="col-12 col-lg-6">-->
+<!--            <div class="single-top-category">-->
+<!--              <img th:src="@{/img/bg-img/bg3.jpg}" alt="" />-->
+<!--              &lt;!&ndash; Content &ndash;&gt;-->
+<!--              <div class="top-cta-content">-->
+<!--                <h3>Noodles Chineses</h3>-->
+<!--                <h6>Simples &amp; Delicioso</h6>-->
+<!--                <a href="receipe-post.html" class="btn delicious-btn"-->
+<!--                  >Ver Receita Completa</a-->
+<!--                >-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
     <!-- ##### Top Category Area End ##### -->
 
     <!-- ##### Best Receipe Area Start ##### -->
@@ -387,15 +225,14 @@
           <div class="col-12">
             <!-- Cta Content -->
             <div class="cta-content text-center">
-              <h2>Receitas Sem Glúten</h2>
+              <h2>Receitas Vegetarianas</h2>
               <p>
-                Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque
-                accumsan molestie. Vestibulum ante ipsum primis in faucibus orci
-                luctus et ultrices posuere cubilia Curae; Cras sed accumsan
-                neque. Ut vulputate, lectus vel aliquam congue, risus leo
-                elementum nibh
+                Descubra desde saladas frescas até pratos principais saborosos, perfeitos para vegetarianos e aqueles que desejam reduzir o consumo de carne.
+                Delicie-se com receitas que promovem um estilo de vida saudável e saboroso!
               </p>
-              <a href="#" class="btn delicious-btn">Descobrir receitas</a>
+              <a th:href="@{/receitas?categoria=VEGETARIANO}" class="btn delicious-btn">
+                Descobrir receitas
+              </a>
             </div>
           </div>
         </div>

@@ -89,85 +89,19 @@
                             <ul>
                                 <li class="active"><a th:href="@{/}">Home</a></li>
                                 <li>
-                                    <a href="#">Páginas</a>
-                                    <ul class="dropdown">
-                                        <li><a th:href="@{/}">Home</a></li>
-                                        <li><a th:href="@{/receitas}">Receitas</a></li>
-                                        <li>
-                                            <a href="#">Categorias</a>
-                                            <ul class="dropdown">
-                                                <li><a th:href="@{/receitas?categoria=DOCES}">Doces</a></li>
-                                                <li><a th:href="@{/receitas?categoria=SALGADOS}">Salgados</a></li>
-                                                <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
-                                                <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
-                                                <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
-                                                <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
-                                                <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
-                                            </ul>
-                                        </li>
-                                        <!-- <li><a href="about.html">Sobre</a></li> -->
-                                    </ul>
-                                </li>
-                                <li>
                                 <li>
                                     <a href="#">Categorias</a>
-                                    <div class="megamenu">
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Doces</li>
-                                            <li><a th:href="@{/receitas?categoria=DOCES}">Ver todas as receitas</a></li>
-                                            <li><a th:href="@{/receitas?categoria=DOCES}">Pesquisar receita</a></li>
-                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Salgados</li>
-                                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Ver todas as receitas</a></li>
-                                            <li><a th:href="@{/receitas?categoria=SALGADOS}">Pesquisar receita</a></li>
-                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Vegetariano</li>
-                                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Ver todas as receitas</a></li>
-                                            <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Pesquisar receita</a></li>
-                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Frutos do Mar</li>
-                                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Ver todas as receitas</a></li>
-                                            <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Pesquisar receita</a></li>
-                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Peixes</li>
-                                            <li><a th:href="@{/receitas?categoria=PEIXES}">Ver todas as receitas</a></li>
-                                            <li><a th:href="@{/receitas?categoria=PEIXES}">Pesquisar receita</a></li>
-                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Carnes</li>
-                                            <li><a th:href="@{/receitas?categoria=CARNES}">Ver todas as receitas</a></li>
-                                            <li><a th:href="@{/receitas?categoria=CARNES}">Pesquisar receita</a></li>
-                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Aves</li>
-                                            <li><a th:href="@{/receitas?categoria=AVES}">Ver todas as receitas</a></li>
-                                            <li><a th:href="@{/receitas?categoria=AVES}">Pesquisar receita</a></li>
-                                            <li><a th:href="@{/receitas/nova}">Cadastrar Receita</a></li>
-                                        </ul>
-                                        <div class="single-mega cn-col-4">
-                                            <div class="receipe-slider owl-carousel">
-                                                <a href="#"
-                                                ><img th:src="@{/img/bg-img/bg1.jpg}" alt=""
-                                                /></a>
-                                                <a href="#"
-                                                ><img th:src="@{/img/bg-img/bg6.jpg}" alt=""
-                                                /></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <ul class="dropdown">
+                                        <li><a th:href="@{/receitas?categoria=DOCES}">Doces</a></li>
+                                        <li><a th:href="@{/receitas?categoria=SALGADOS}">Salgados</a></li>
+                                        <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
+                                        <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
+                                        <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
+                                        <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
+                                        <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
+                                    </ul>
                                 </li>
                                 <li><a th:href="@{/receitas}">Receitas</a></li>
-                                <li><a th:href="@{/receitas?categoria=VEGETARIANO}">Vegetariano</a></li>
 
                                 <!-- User Icon for desktop -->
                                 <li>
@@ -180,25 +114,9 @@
                                 </li>
 
                             </ul>
-
-                            <!-- Newsletter Form -->
-                            <div class="search-btn">
-                                <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
-                                <!-- <i class="fa fa-user" aria-hidden="true">Conta </i> -->
-                            </div>
-
-                            <!-- <div class="user-photo">
-                              <a href="#"><img src="img/core-img/icon.jpeg" alt="User Photo" class="user-photo-img"></a>
-                              <ul class="dropdown user-dropdown">
-                                <li><a href="#">Visualizar Conta</a></li>
-                                <li><a href="#">Sair</a></li>
-                              </ul>
-                            </div> -->
-
                         </div>
                         <!-- Nav End -->
                     </div>
-
                 </nav>
             </div>
         </div>

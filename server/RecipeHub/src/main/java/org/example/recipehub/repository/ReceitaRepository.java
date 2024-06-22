@@ -10,4 +10,6 @@ public interface ReceitaRepository extends JpaRepository<Receita, Long> {
     List<Receita> findByCategoriaAndNomeContainingIgnoreCase(Categoria categoria, String nome);
     List<Receita> findTop6ByOrderByCriadoEmDesc();
     List<Receita> findTop6ByFavoritoTrueOrderByCriadoEmDesc();
+
+    List<Receita> findByUsuarioLogin(String login);
 }
