@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
@@ -12,14 +11,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>RecipeHub | Receitas </title>
+    <title>RecipeHub | Conta</title>
 
     <!-- Favicon -->
-    <link rel="icon" th:href="@{/img/core-img/load.svg}" />
+    <link rel="icon" th:href="@{/img/core-img/load.svg}"/>
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" th:href="@{/style.css}" />
-    <link rel="stylesheet" th:href="@{/css/register.css}" />
 </head>
 
 <body>
@@ -103,10 +101,10 @@
                                         <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
                                     </ul>
                                 </li>
-                                <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
+                                <li><a th:href="@{/receitas}">Receitas</a></li>
 
                                 <!-- User Icon for desktop -->
-                                <li>
+                                <li class="active">
                                     <a href="#">Conta</a>
                                     <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
                                     <ul class="dropdown user-dropdown">
@@ -116,109 +114,100 @@
                                 </li>
 
                             </ul>
-
-                            <!-- Newsletter Form -->
-                            <div class="search-btn">
-                                <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
-                                <!-- <i class="fa fa-user" aria-hidden="true">Conta </i> -->
-                            </div>
                         </div>
                         <!-- Nav End -->
                     </div>
-
                 </nav>
             </div>
         </div>
     </div>
 </header>
-<!-- ##### Header Area End ##### -->
 
-<!-- ##### Breadcumb Area Start ##### -->
-<div
-        class="breadcumb-area bg-img bg-overlay">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <div class="breadcumb-text text-center">
-                    <h2>Cadastro de Receita</h2>
+<section>
+    <div
+            class="breadcumb-area bg-img bg-overlay">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcumb-text text-center">
+                        <h2>Conta</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- ##### Breadcumb Area End ##### -->
+</section>
 
-<div class="receipe-post-area section-padding-80">
-
-
-    <!-- Receipe Content Area -->
-    <div class="receipe-content-area">
-
-        <div class="container">
-            <div class="row">
-                <form class="form-container" th:action="@{/receitas/salvar}" th:object="${receita}" method="post">
-
-                    <div>
-                        <label class="form-label" for="usuarioId">UsuarioID(desenvolvimento):</label>
-                        <input th:field="*{usuarioId}" class="form-input" type="number" id="usuarioId" name="usuarioId" required />
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="nome">Nome:</label>
-                        <input th:field="*{nome}"  class="form-input" type="text" id="nome" name="nome" required />
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="categoria">Categoria:</label>
-                        <select th:field="*{categoria}"  class="form-select" id="categoria" name="categoria">
-                            <option value="DOCES">Doces</option>
-                            <option value="SALGADOS">Salgados</option>
-                            <option value="VEGETARIANO">Vegetariano</option>
-                            <option value="FRUTOS_DO_MAR">Frutos do Mar</option>
-                            <option value="PEIXES">Peixes</option>
-                            <option value="CARNES">Carnes</option>
-                            <option value="MASSAS">Massas</option>
-                            <option value="AVES">Aves</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="descricao">Descrição:</label>
-                        <textarea th:field="*{descricao}" class="form-textarea" id="descricao" name="descricao" required></textarea>
-                    </div>
-                    <div>
-                        <label class="form-label" for="modoPreparo">Modo de Preparo:</label>
-                        <textarea th:field="*{modoPreparo}"  class="form-textarea" id="modoPreparo" name="modoPreparo" required></textarea>
-                    </div>
-                    <div>
-                        <label class="form-label" for="tempoEstimado">Tempo Estimado (minutos):</label>
-                        <input th:field="*{tempoEstimado}"  class="form-input" type="number" id="tempoEstimado" name="tempoEstimado" required />
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="porcoes">Porções:</label>
-                        <input th:field="*{porcoes}" class="form-input" type="number" id="porcoes" name="porcoes" required />
-                    </div>
-
-                    <div id="ingredientes-container" class="ingredient-container">
-                        <div class="span-and-btn">
-                            <span>Ingredientes </span>
-                            <button type="button" class="form-button" onclick="adicionarIngrediente()">+</button>
+<section>
+    <div class="container conta">
+        <div class="row gutters">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="account-settings">
+                            <div class="user-profile">
+                                <div class="user-avatar">
+                                    <img th:src="@{/img/bg-img/user.png}" alt="Maxwell Admin">
+                                </div>
+                                <h5 th:text="${usuario.nome}" class="user-name">Yuki Hayashi</h5>
+                                <h6 th:text="${usuario.email}" class="user-email">yuki@Maxwell.com</h6>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <form th:object="${usuario}" method="get">
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-2">Detalhes</h6>
+                                </div>
 
-                    <div class="button-container">
-                        <button type="submit" class="btn delicious-btn">Salvar</button>
+                                <input type="hidden" th:field="*{id}" />
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input th:disabled="${!isEdicao}" th:field="*{nome}" type="text" class="form-control" id="nome">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input th:disabled="${!isEdicao}" th:field="*{email}" type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="login">Login</label>
+                                        <input th:disabled="${!isEdicao}" th:field="*{login}" type="text" class="form-control" id="login">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="senha">Senha</label>
+                                        <input th:disabled="${!isEdicao}" th:field="*{senha}" type="password" class="form-control" id="senha">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <a th:if="${!isEdicao}" th:href="@{/conta/editar}" class="btn btn-conta">Editar</a>
+                                        <a th:if="${isEdicao}" th:href="@{/conta}" class="btn btn-secondary">Cancelar</a>
+                                        <button th:if="${isEdicao}" type="button" id="submit" name="submit" class="btn btn-conta">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
-
+                </div>
             </div>
         </div>
     </div>
-
-</div>
-
-<!-- ##### Footer Area Start ##### -->
+</section>
 <footer class="footer-area">
     <div class="container h-100">
         <div class="row h-100">
@@ -269,7 +258,5 @@
 <script th:src="@{/js/plugins/plugins.js}"></script>
 <!-- Active js -->
 <script th:src="@{/js/active.js}"></script>
-<script th:src="@{/js/recipe.js}"></script>
-<script th:src="@{/js/register-receipe.js}"></script>
 </body>
 </html>

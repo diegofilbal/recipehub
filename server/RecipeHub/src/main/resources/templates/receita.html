@@ -87,7 +87,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li class="active"><a th:href="@{/}">Home</a></li>
+                                <li><a th:href="@{/}">Home</a></li>
                                 <li>
                                 <li>
                                     <a href="#">Categorias</a>
@@ -98,17 +98,18 @@
                                         <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
                                         <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
                                         <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
+                                        <li><a th:href="@{/receitas?categoria=MASSAS}">Massas</a></li>
                                         <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
                                     </ul>
                                 </li>
-                                <li><a th:href="@{/receitas}">Receitas</a></li>
+                                <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
 
                                 <!-- User Icon for desktop -->
                                 <li>
                                     <a href="#">Conta</a>
                                     <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
                                     <ul class="dropdown user-dropdown">
-                                        <li><a href="#">Visualizar</a></li>
+                                        <li><a th:href="@{/conta}">Visualizar</a></li>
                                         <li><a href="index.html">Sair</a></li>
                                     </ul>
                                 </li>
@@ -142,7 +143,7 @@
     <!-- Receipe Post Search -->
     <div class="receipe-post-search mb-80">
         <div class="container">
-            <form th:action="@{/receitas}" th:object="${pesquisa}" method="post">
+            <form th:action="@{/receitas}" th:object="${pesquisa}" method="get">
                 <div class="row">
                     <div class="col-12 col-lg-3">
                         <select th:field="*{categoria}" name="categoria" id="categoria">
@@ -152,6 +153,7 @@
                             <option value="FRUTOS_DO_MAR">Frutos do Mar</option>
                             <option value="PEIXES">Peixes</option>
                             <option value="CARNES">Carnes</option>
+                            <option value="MASSAS">Massas</option>
                             <option value="AVES">Aves</option>
                         </select>
                     </div>

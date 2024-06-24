@@ -12,11 +12,13 @@ function adicionarIngrediente() {
 
             <label for="medida${index}">Medida:</label>
             <select id="medida${index}" name="ingredientes[${index}].medida">
-                <option value="GRAMA">Grama(s)</option>
+                <option value="GRAMAS">Gramas</option>
                 <option value="COLHER_DE_CHA">Colher(es) de chá</option>
                 <option value="COLHER_DE_SOPA">Colher(es) de sopa</option>
                 <option value="XICARA">Xícara(s)</option>
                 <option value="UNIDADE">Unidade(s)</option>
+                <option value="ML">Mililitro(s)</option>
+                <option value="LITRO">Litro(s)</option>
             </select>
 
             <button class="remove" type="button" onclick="removerIngrediente(this)">-</button>

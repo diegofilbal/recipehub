@@ -6,8 +6,8 @@ public enum Medida {
     COLHER_DE_SOPA("Colher(es) de sopa"),
     XICARA("Xícara(s)"),
     UNIDADE("Unidade(s)"),
-    ML("mililitro(s)"),
-    LITRO("litro(s)");
+    ML("Mililitro(s)"),
+    LITRO("Litro(s)");
 
     private final String descricao;
 

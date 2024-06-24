@@ -1884,4 +1884,17 @@ textarea:focus {
   padding-left: 30px;
 }
 
+.conta {
+    padding-top: 80px;
+}
+
+.conta h6 {
+    color: #317B22;
+}
+
+.conta .btn-conta {
+    color: #fff;
+    background-color: #317B22;
+}
+
 /*# sourceMappingURL=style.css.map */
