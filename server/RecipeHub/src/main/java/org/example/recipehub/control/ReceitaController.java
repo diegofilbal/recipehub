@@ -1,5 +1,6 @@
 package org.example.recipehub.control;
 
+import jakarta.validation.Valid;
 import org.example.recipehub.model.Categoria;
 import org.example.recipehub.model.Receita;
 import org.example.recipehub.model.dto.PesquisaDTO;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -37,12 +39,15 @@ public class ReceitaController {
 
     @GetMapping("/nova")
     public String form(Model model){
-        model.addAttribute("receita", new ReceitaDTO());
+        model.addAttribute("receitaDTO", new ReceitaDTO());
         return "nova-receita";
     }
 
     @PostMapping("/salvar")
-    public String salvar(@ModelAttribute ReceitaDTO receitaDTO) {
+    public String salvar(@ModelAttribute @Valid ReceitaDTO receitaDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "nova-receita";
+        }
         receitaDTO.setUsuarioId(2L);
         Receita receita = receitaService.salvar(receitaDTO);
         return "redirect:/receitas/" + receita.getId();

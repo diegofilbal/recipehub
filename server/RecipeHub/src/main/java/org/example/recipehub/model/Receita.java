@@ -18,9 +18,10 @@ public class Receita {
     @CreatedDate
     private LocalDateTime criadoEm;
 
-    @Column(nullable = false)
+    @Column(length = 255, nullable = false)
     private String nome;
 
+    @Column(length = 1000)
     private String descricao;
 
     @Column(length = 2000)

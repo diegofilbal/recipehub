@@ -156,10 +156,11 @@
 
         <div class="container">
             <div class="row">
-                <form class="form-container" th:action="@{/receitas/salvar}" th:object="${receita}" method="post">
+                <form class="form-container" th:action="@{/receitas/salvar}" th:object="${receitaDTO}" method="post">
                     <div>
                         <label class="form-label" for="nome">Nome:</label>
-                        <input th:field="*{nome}"  class="form-input" type="text" id="nome" name="nome" required />
+                        <input th:field="*{nome}" class="form-input" type="text" id="nome" name="nome"/>
+                        <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="error-message"></div>
                     </div>
 
                     <div>
@@ -169,25 +170,31 @@
                                     th:value="${categoria.name()}"
                                     th:text="${categoria.descricao}">Descrição</option>
                         </select>
-
+                        <div th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}" class="error-message"></div>
                     </div>
 
                     <div>
                         <label class="form-label" for="descricao">Descrição:</label>
-                        <textarea th:field="*{descricao}" class="form-textarea" id="descricao" name="descricao" required></textarea>
+                        <textarea th:field="*{descricao}" class="form-textarea" id="descricao" name="descricao"></textarea>
+                        <div th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="error-message"></div>
                     </div>
+
                     <div>
                         <label class="form-label" for="modoPreparo">Modo de Preparo:</label>
-                        <textarea th:field="*{modoPreparo}"  class="form-textarea" id="modoPreparo" name="modoPreparo" required></textarea>
+                        <textarea th:field="*{modoPreparo}" class="form-textarea" id="modoPreparo" name="modoPreparo"></textarea>
+                        <div th:if="${#fields.hasErrors('modoPreparo')}" th:errors="*{modoPreparo}" class="error-message"></div>
                     </div>
+
                     <div>
                         <label class="form-label" for="tempoEstimado">Tempo Estimado (minutos):</label>
-                        <input th:field="*{tempoEstimado}"  class="form-input" type="number" id="tempoEstimado" name="tempoEstimado" required />
+                        <input th:field="*{tempoEstimado}" class="form-input" type="number" id="tempoEstimado" name="tempoEstimado"/>
+                        <div th:if="${#fields.hasErrors('tempoEstimado')}" th:errors="*{tempoEstimado}" class="error-message"></div>
                     </div>
 
                     <div>
                         <label class="form-label" for="porcoes">Porções:</label>
-                        <input th:field="*{porcoes}" class="form-input" type="number" id="porcoes" name="porcoes" required />
+                        <input th:field="*{porcoes}" class="form-input" type="number" id="porcoes" name="porcoes"/>
+                        <div th:if="${#fields.hasErrors('porcoes')}" th:errors="*{porcoes}" class="error-message"></div>
                     </div>
 
                     <div id="ingredientes-container" class="ingredient-container">
@@ -195,6 +202,7 @@
                             <span>Ingredientes </span>
                             <button type="button" class="form-button" onclick="adicionarIngrediente()">+</button>
                         </div>
+                        <div th:if="${#fields.hasErrors('ingredientes')}" th:errors="*{ingredientes}" class="error-message"></div>
                     </div>
 
                     <div class="button-container">
