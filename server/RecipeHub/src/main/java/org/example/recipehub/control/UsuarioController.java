@@ -24,12 +24,6 @@ public class UsuarioController {
         return "usuario/detalhar";
     }
 
-    @GetMapping("/cadastrar")
-    public String formUsuario(Model model) {
-        model.addAttribute("usuario", new UsuarioDTO());
-        return "index";
-    }
-
     @PostMapping()
     public String salvar(@ModelAttribute UsuarioDTO usuario) {
         UsuarioDTO novoUsuario = usuarioService.salvar(usuario);

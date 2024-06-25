@@ -20,15 +20,15 @@
 <div class="container">
     <div class="forms-container">
         <div class="signin-signup">
-            <form action="#" class="sign-in-form">
+            <form th:action="@{/login}" method="post" class="sign-in-form">
                 <h2 class="title">Entrar</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Login" />
+                    <input type="text" placeholder="Login" id="login" name="username" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha" />
+                    <input type="password" placeholder="Senha" id="senha" name="password"/>
                 </div>
                 <input type="submit" value="Entrar" class="btn solid" />
                 <p class="social-text">Ou Entre com as seguintes plataformas</p>
