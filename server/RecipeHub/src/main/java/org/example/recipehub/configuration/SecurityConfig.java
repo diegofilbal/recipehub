@@ -38,7 +38,8 @@ public class SecurityConfig {
                                 .defaultSuccessUrl("/", true)
                                 .permitAll())
                 .logout(LogoutConfigurer::permitAll
-                );
+                )
+                .userDetailsService(userDetailsService);
 
         return http.build();
     }

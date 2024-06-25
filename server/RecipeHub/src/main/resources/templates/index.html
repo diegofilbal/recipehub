@@ -59,19 +59,19 @@
                 <h2 class="title">Cadastrar</h2>
                 <div class="input-field">
                     <i class="fas fa-id-card"></i>
-                    <input th:field="*{nome}" type="text" placeholder="Nome" />
+                    <input th:field="*{nome}" type="text" placeholder="Nome" required/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input th:field="*{login}" type="text" placeholder="Login" />
+                    <input th:field="*{login}" type="text" placeholder="Login" required/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input th:field="*{email}" type="email" placeholder="Email" />
+                    <input th:field="*{email}" type="email" placeholder="Email" required/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input th:field="*{senha}" type="password" placeholder="Senha" />
+                    <input th:field="*{senha}" type="password" placeholder="Senha" required/>
                 </div>
                 <input type="submit" class="btn" value="Cadastrar" />
 <!--                <p class="social-text">Ou Cadastre-se com as seguintes plataformas</p>-->
