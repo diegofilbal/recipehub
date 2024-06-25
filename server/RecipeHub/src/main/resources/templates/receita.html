@@ -198,7 +198,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-4">
+                <div th:if="${receita.usuario.id != 1}" class="col-12 col-md-4">
                     <div class="receipe-ratings text-right my-5">
                         <div class="ratings">
                             <form th:action="@{'/receitas/' + ${receita.id} + '/favoritar'}" th:object="${pesquisa}" method="post">
