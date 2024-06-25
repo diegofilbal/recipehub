@@ -16,8 +16,9 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model){
-        model.addAttribute("ultimasReceitas", receitaService.findUltimasReceitas());
-        model.addAttribute("receitasFavoritas", receitaService.findReceitasFavoritas());
+        Long usuarioId = 2L;
+        model.addAttribute("ultimasReceitas", receitaService.findUltimasReceitas(usuarioId));
+        model.addAttribute("receitasFavoritas", receitaService.findReceitasFavoritas(usuarioId));
         model.addAttribute("receitasPadrao", receitaService.findReceitasByLogin("RecipeHub"));
 
         return "home";

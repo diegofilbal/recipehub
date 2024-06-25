@@ -29,16 +29,16 @@ public class ReceitaService {
     @Autowired
     private IngredienteService ingredienteService;
 
-    public List<Receita> findAll(String categoria, String nome) {
-        return customReceitaRepository.findReceitasByCategoriaAndNome(categoria, nome);
+    public List<Receita> findAll(Long usuarioId, String categoria, String nome) {
+        return customReceitaRepository.findReceitasByCategoriaAndNome(usuarioId, categoria, nome);
     }
 
-    public List<Receita> findUltimasReceitas() {
-        return receitaRepository.findTop6ByOrderByCriadoEmDesc();
+    public List<Receita> findUltimasReceitas(Long usuarioId) {
+        return receitaRepository.findTop6ByUsuarioIdOrderByCriadoEmDesc(usuarioId);
     }
 
-    public List<Receita> findReceitasFavoritas() {
-        return receitaRepository.findTop6ByFavoritoTrueOrderByCriadoEmDesc();
+    public List<Receita> findReceitasFavoritas(Long usuarioId) {
+        return receitaRepository.findTop6ByFavoritoTrueAndUsuarioIdOrderByCriadoEmDesc(usuarioId);
     }
 
     public Receita findById(Long id) {

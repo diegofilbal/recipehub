@@ -22,8 +22,9 @@ public class ReceitaController {
     public String findAll(@RequestParam(required = false) String categoria,
                           @RequestParam(required = false) String nome,
                           Model model){
+        Long usuarioId = 2L;
         model.addAttribute("pesquisa", new PesquisaDTO(categoria, nome));
-        model.addAttribute("receitas", receitaService.findAll(categoria, nome));
+        model.addAttribute("receitas", receitaService.findAll(usuarioId, categoria, nome));
         return "receitas";
     }
 
@@ -42,6 +43,7 @@ public class ReceitaController {
 
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute ReceitaDTO receitaDTO) {
+        receitaDTO.setUsuarioId(2L);
         Receita receita = receitaService.salvar(receitaDTO);
         return "redirect:/receitas/" + receita.getId();
     }
