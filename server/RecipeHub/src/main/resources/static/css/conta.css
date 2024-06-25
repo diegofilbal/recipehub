@@ -83,5 +83,11 @@ a:hover, a:focus {
 }
 
 
+.form-control:focus {
+    border-color: #317B22;
+    box-shadow: 0 0 0 0.25rem rgba(49, 123, 34, 0.25);
+}
+
+
 
 

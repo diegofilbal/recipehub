@@ -4,15 +4,12 @@ import org.example.recipehub.model.Usuario;
 import org.example.recipehub.model.dto.UsuarioDTO;
 import org.example.recipehub.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.core.userdetails.UserDetails;
-//import org.springframework.security.core.userdetails.UserDetailsService;
-//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UsuarioService /*implements UserDetailsService*/ {
+public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -33,18 +30,4 @@ public class UsuarioService /*implements UserDetailsService*/ {
     public void deletar(Long id) {
         usuarioRepository.deleteById(id);
     }
-
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        try {
-//            Usuario user = usuarioRepository.findByLogin(username)
-//                    .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado"));
-//
-//            return org.springframework.security.core.userdetails.User.withUsername(user.getUsername())
-//                    .password(user.getPassword())
-//                    .build();
-//        } catch (Exception e) {
-//            throw new UsernameNotFoundException("Usuário não encontrado");
-//        }
-//    }
 }
