@@ -20,6 +20,16 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" th:href="@{/style.css}" />
     <link rel="stylesheet" th:href="@{/css/register.css}" />
+
+    <style>
+        .nice-select {
+          width: 100% !important;
+          color: #2f2f2f !important;
+          height: 42px;
+          line-height: 40px;
+          background-color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -158,13 +168,13 @@
             <div class="row">
                 <form class="form-container" th:action="@{/receitas/salvar}" th:object="${receitaDTO}" method="post">
                     <div>
-                        <label class="form-label" for="nome">Nome:</label>
-                        <input th:field="*{nome}" class="form-input" type="text" id="nome" name="nome"/>
+                        <label for="nome">Nome:</label>
+                        <input th:field="*{nome}" class="form-control" type="text" id="nome" name="nome"/>
                         <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="error-message"></div>
                     </div>
 
                     <div>
-                        <label class="form-label" for="categoria">Categoria:</label>
+                        <label for="categoria">Categoria:</label>
                         <select th:field="*{categoria}" class="form-select" id="categoria" name="categoria">
                             <option th:each="categoria : ${T(org.example.recipehub.model.Categoria).values()}"
                                     th:value="${categoria.name()}"
@@ -174,26 +184,26 @@
                     </div>
 
                     <div>
-                        <label class="form-label" for="descricao">Descrição:</label>
-                        <textarea th:field="*{descricao}" class="form-textarea" id="descricao" name="descricao"></textarea>
+                        <label for="descricao">Descrição:</label>
+                        <textarea th:field="*{descricao}" class="form-control" id="descricao" name="descricao"></textarea>
                         <div th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="error-message"></div>
                     </div>
 
                     <div>
-                        <label class="form-label" for="modoPreparo">Modo de Preparo:</label>
-                        <textarea th:field="*{modoPreparo}" class="form-textarea" id="modoPreparo" name="modoPreparo"></textarea>
+                        <label for="modoPreparo">Modo de Preparo:</label>
+                        <textarea th:field="*{modoPreparo}" class="form-control" id="modoPreparo" name="modoPreparo"></textarea>
                         <div th:if="${#fields.hasErrors('modoPreparo')}" th:errors="*{modoPreparo}" class="error-message"></div>
                     </div>
 
                     <div>
-                        <label class="form-label" for="tempoEstimado">Tempo Estimado (minutos):</label>
-                        <input th:field="*{tempoEstimado}" class="form-input" type="number" id="tempoEstimado" name="tempoEstimado"/>
+                        <label  for="tempoEstimado">Tempo Estimado (minutos):</label>
+                        <input th:field="*{tempoEstimado}" class="form-control" type="number" id="tempoEstimado" name="tempoEstimado"/>
                         <div th:if="${#fields.hasErrors('tempoEstimado')}" th:errors="*{tempoEstimado}" class="error-message"></div>
                     </div>
 
                     <div>
-                        <label class="form-label" for="porcoes">Porções:</label>
-                        <input th:field="*{porcoes}" class="form-input" type="number" id="porcoes" name="porcoes"/>
+                        <label for="porcoes">Porções:</label>
+                        <input th:field="*{porcoes}" class="form-control" type="number" id="porcoes" name="porcoes"/>
                         <div th:if="${#fields.hasErrors('porcoes')}" th:errors="*{porcoes}" class="error-message"></div>
                     </div>
 

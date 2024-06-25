@@ -4,14 +4,15 @@ function adicionarIngrediente() {
     var index = allIngredientes.length; // Correctly count only '.ingrediente' divs
     var html = `
         <div class="ingrediente">
+
             <label for="nomeIngrediente${index}">Nome:</label>
-            <input type="text" id="nomeIngrediente${index}" name="ingredientes[${index}].nome" required />
+            <input type="text" id="nomeIngrediente${index}" class="form-control" name="ingredientes[${index}].nome" required />
 
             <label for="quantidade${index}">Quantidade:</label>
-            <input type="number" id="quantidade${index}" name="ingredientes[${index}].quantidade" required />
+            <input type="number" id="quantidade${index}" class="form-control" name="ingredientes[${index}].quantidade" required />
 
             <label for="medida${index}">Medida:</label>
-            <select id="medida${index}" name="ingredientes[${index}].medida">
+            <select id="medida${index}" class="nice-select form-select" name="ingredientes[${index}].medida">
                             <option value="GRAMAS">Gramas</option>
                             <option value="COLHER_DE_CHA">Colher(es) de chá</option>
                             <option value="COLHER_DE_SOPA">Colher(es) de sopa</option>
@@ -25,6 +26,7 @@ function adicionarIngrediente() {
         </div>
     `;
     container.insertAdjacentHTML('beforeend', html);
+    $(`#medida${index}`).niceSelect();
 }
 
 function removerIngrediente(button) {

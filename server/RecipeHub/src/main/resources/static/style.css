@@ -360,7 +360,6 @@ textarea:focus {
 .nice-select {
 
   background-color: #f3f5f8;
-  border-radius: 0;
   width: 100%;
   height: 60px;
   line-height: 60px;
@@ -1884,10 +1883,6 @@ textarea:focus {
   padding-left: 30px;
 }
 
-.error-message{
-    color: red;
-    font-size: 0.9em;
-    margin-top: 5px;
-}
+
 
 /*# sourceMappingURL=style.css.map */

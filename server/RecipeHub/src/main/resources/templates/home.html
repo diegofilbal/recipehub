@@ -130,8 +130,8 @@
         <div th:each="receita : ${receitasPadrao}"
              class="single-hero-slide bg-img"
              th:style="${'background-image: url(' +
-                       (receita.nome == 'Hambúrguer Caseiro' ? '/img/bg-img/bg1.jpg' :
-                        receita.nome == 'Noodles Chineses' ? '/img/bg-img/bg6.jpg' :
+                       (receita.nome == 'Hambúrguer Artesanal' ? '/img/bg-img/bg1.jpg' :
+                        receita.nome == 'Noodles' ? '/img/bg-img/bg6.jpg' :
                         receita.nome == 'Panquecas Doces' ? '/img/bg-img/bg2.jpg' :
                         '/img/bg-img/default.jpg') + ')'}">
           <div class="container h-100">
@@ -242,7 +242,7 @@
 
     <!-- ##### Small Receipe Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
-      <div class="container">
+      <div class="container" th:if="${not #lists.isEmpty(receitasFavoritas)}">
 
         <div class="row">
           <div class="col-12">
