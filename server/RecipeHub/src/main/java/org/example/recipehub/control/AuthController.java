@@ -11,12 +11,16 @@ public class AuthController {
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("usuario", new UsuarioDTO());
+        model.addAttribute("register", false);
+
         return "index";
     }
 
     @GetMapping("/cadastrar")
     public String formUsuario(Model model) {
         model.addAttribute("usuario", new UsuarioDTO());
+        model.addAttribute("register", true);
+
         return "index";
     }
 }

@@ -1,12 +1,22 @@
 package org.example.recipehub.model.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import org.example.recipehub.model.Usuario;
 
 public class UsuarioDTO {
 
     private Long id;
+    @NotBlank(message = "Nome não pode ser vazio")
+    @Size(max = 100, message = "Nome não pode ter mais que 255 caracteres")
     private String nome;
+
+    @NotBlank(message = "Login não pode ser vazio")
+    @Size(max = 15, message = "Login não pode ter mais que 10 caracteres")
     private String login;
+
+    @NotBlank(message = "Senha não pode ser vazia")
+    @Size(max = 15, message = "Senha não pode ter mais que 15 caracteres")
     private String senha;
     private String email;
 

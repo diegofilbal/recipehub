@@ -30,7 +30,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(requests ->
-                        requests.requestMatchers("/login", "/register", "/css/**", "/js/**", "img/**", "fonts/**").permitAll()
+                        requests.requestMatchers("/login", "/usuarios/form/**", "/usuarios", "/css/**", "/js/**", "img/**", "fonts/**").permitAll()
                                 .anyRequest().authenticated())
                 .formLogin(formLogin ->
                         formLogin
@@ -38,8 +38,7 @@ public class SecurityConfig {
                                 .defaultSuccessUrl("/", true)
                                 .permitAll())
                 .logout(LogoutConfigurer::permitAll
-                )
-                .userDetailsService(userDetailsService);
+                );
 
         return http.build();
     }

@@ -111,7 +111,7 @@
                                     <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
                                     <ul class="dropdown user-dropdown">
                                         <li><a th:href="@{/conta}">Visualizar</a></li>
-                                        <li><a href="index.html">Sair</a></li>
+                                        <li><a th:href="@{/logout}">Sair</a></li>
                                     </ul>
                                 </li>
 
@@ -142,6 +142,17 @@
 
 <section>
     <div class="container conta">
+
+        <!-- Mensagem de Sucesso -->
+        <div th:block th:if="${success}" class="alert alert-success" role="alert">
+            <span th:text="${success}">Sucesso!</span>
+        </div>
+
+        <!-- Mensagem de Erro -->
+        <div th:block th:if="${error}" class="alert alert-danger" role="alert">
+            <span th:text="${error}">Erro!</span>
+        </div>
+
         <div class="row gutters">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                 <div class="card h-100">
@@ -161,7 +172,7 @@
             <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                 <div class="card h-100">
                     <div class="card-body">
-                        <form th:object="${usuario}" method="get">
+                        <form th:action="@{/conta/atualizar} "th:object="${usuario}" method="post">
                             <div class="row gutters">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <h6 class="mb-2">Detalhes</h6>
@@ -200,7 +211,7 @@
                                     <div class="text-right">
                                         <a th:if="${!isEdicao}" th:href="@{/conta/editar}" class="btn btn-conta">Editar</a>
                                         <a th:if="${isEdicao}" th:href="@{/conta}" class="btn btn-secondary">Cancelar</a>
-                                        <button th:if="${isEdicao}" type="button" id="submit" name="submit" class="btn btn-conta">Salvar</button>
+                                        <button th:if="${isEdicao}" type="submit" id="submit" name="submit" class="btn btn-conta">Salvar</button>
                                     </div>
                                 </div>
                             </div>
