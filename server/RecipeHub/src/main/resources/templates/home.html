@@ -261,7 +261,7 @@
                 <img th:src="@{/img/bg-img/dinner-placeholder-crop.png}" alt="" />
               </div>
               <!-- Receipe Content -->
-              <div class="receipe-content">
+              <div class="receipe-content" style="display: flex; flex-direction: column; justify-content: center;">
                 <span th:text="'Criado em ' + ${#temporals.format(receita.criadoEm, 'dd/MM/yyyy HH:mm:ss')}"></span>
                 <a th:href="@{'/receitas/' + ${receita.id}}">
                   <h5 th:text="${receita.nome}">Massa Italiana Caseira</h5>

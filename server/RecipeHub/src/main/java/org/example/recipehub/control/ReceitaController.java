@@ -48,6 +48,8 @@ public class ReceitaController {
         return "nova-receita";
     }
 
+
+
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute @Valid ReceitaDTO receitaDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

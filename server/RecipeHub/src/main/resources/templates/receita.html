@@ -225,17 +225,21 @@
                         <h4>Ingredientes</h4>
 
                         <!-- Custom Checkbox -->
-                        <div class="custom-control custom-checkbox" th:each="ingrediente: ${receita.ingredientes}">
+                        <div th:each="ingrediente, iterStat : ${receita.ingredientes}" class="custom-control custom-checkbox">
                             <input
                                     type="checkbox"
                                     class="custom-control-input"
-                                    id="customCheck1"
-                            />
-                            <label class="custom-control-label" for="customCheck1"
-                                   th:text="${ingrediente.ingrediente.nome} + ' - ' + ${ingrediente.quantidade} + ' ' +${ingrediente.medida.descricao}"></label>
+                                    th:id="${'customCheck' + iterStat.index}"/>
+                            <label class="custom-control-label"
+                                   th:for="${'customCheck' + iterStat.index}"
+                                   th:attr="data-nome=${ingrediente.ingrediente.nome}, data-quantidade=${ingrediente.quantidade}, data-medida=${ingrediente.medida.descricao}"
+                                   th:text="${ingrediente.ingrediente.nome} + ' - ' + ${ingrediente.quantidade} + ' ' + ${ingrediente.medida.descricao}">
+                            </label>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
