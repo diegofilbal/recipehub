@@ -157,12 +157,6 @@
         <div class="container">
             <div class="row">
                 <form class="form-container" th:action="@{/receitas/salvar}" th:object="${receita}" method="post">
-
-                    <div>
-                        <label class="form-label" for="usuarioId">UsuarioID(desenvolvimento):</label>
-                        <input th:field="*{usuarioId}" class="form-input" type="number" id="usuarioId" name="usuarioId" required />
-                    </div>
-
                     <div>
                         <label class="form-label" for="nome">Nome:</label>
                         <input th:field="*{nome}"  class="form-input" type="text" id="nome" name="nome" required />
@@ -170,16 +164,12 @@
 
                     <div>
                         <label class="form-label" for="categoria">Categoria:</label>
-                        <select th:field="*{categoria}"  class="form-select" id="categoria" name="categoria">
-                            <option value="DOCES">Doces</option>
-                            <option value="SALGADOS">Salgados</option>
-                            <option value="VEGETARIANO">Vegetariano</option>
-                            <option value="FRUTOS_DO_MAR">Frutos do Mar</option>
-                            <option value="PEIXES">Peixes</option>
-                            <option value="CARNES">Carnes</option>
-                            <option value="MASSAS">Massas</option>
-                            <option value="AVES">Aves</option>
+                        <select th:field="*{categoria}" class="form-select" id="categoria" name="categoria">
+                            <option th:each="categoria : ${T(org.example.recipehub.model.Categoria).values()}"
+                                    th:value="${categoria.name()}"
+                                    th:text="${categoria.descricao}">Descrição</option>
                         </select>
+
                     </div>
 
                     <div>

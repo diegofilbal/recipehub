@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
@@ -11,15 +12,18 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>RecipeHub | Conta</title>
+    <title>RecipeHub | Receitas </title>
 
     <!-- Favicon -->
-    <link rel="icon" th:href="@{/img/core-img/load.svg}"/>
+    <link rel="icon" th:href="@{/img/core-img/load.svg}" />
+    <script
+            src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"
+    ></script>
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" th:href="@{/style.css}" />
-    <link rel="stylesheet" th:href="@{/css/conta.css}" />
-
+    <link rel="stylesheet" th:href="@{/css/perfil.css}" />
 </head>
 
 <body>
@@ -88,7 +92,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a th:href="@{/}">Home</a></li>
+                                <li class="active"><a th:href="@{/}">Home</a></li>
                                 <li>
                                 <li>
                                     <a href="#">Categorias</a>
@@ -106,11 +110,11 @@
                                 <li><a th:href="@{/receitas}">Receitas</a></li>
 
                                 <!-- User Icon for desktop -->
-                                <li class="active">
+                                <li>
                                     <a href="#">Conta</a>
                                     <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
                                     <ul class="dropdown user-dropdown">
-                                        <li><a th:href="@{/conta}">Visualizar</a></li>
+                                        <li><a href="#">Visualizar</a></li>
                                         <li><a href="index.html">Sair</a></li>
                                     </ul>
                                 </li>
@@ -125,91 +129,94 @@
     </div>
 </header>
 
-<section>
-    <div
-            class="breadcumb-area bg-img bg-overlay">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcumb-text text-center">
-                        <h2>Conta</h2>
+<!--<div class="receipe-post-area section-padding-80">-->
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                            </div>
+                            <h5 class="user-name">Yuki Hayashi</h5>
+                            <h6 class="user-email">yuki@Maxwell.com</h6>
+                        </div>
+                        <div class="about">
+                            <h5>About</h5>
+                            <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section>
-    <div class="container conta">
-        <div class="row gutters">
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <div class="account-settings">
-                            <div class="user-profile">
-                                <div class="user-avatar">
-                                    <img th:src="@{/img/bg-img/user.png}" alt="Maxwell Admin">
-                                </div>
-                                <h5 th:text="${usuario.nome}" class="user-name">Yuki Hayashi</h5>
-                                <h6 th:text="${usuario.email}" class="user-email">yuki@Maxwell.com</h6>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <h6 class="mb-2 text-primary">Personal Details</h6>
+                        </div>
+                        <!-- Adicione th:disabled para cada campo de entrada -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Enter full name" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="eMail">Email</label>
+                                <input type="email" class="form-control" id="eMail" placeholder="Enter email ID" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Enter phone number" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="website">Website URL</label>
+                                <input type="url" class="form-control" id="website" placeholder="Website url" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="Street">Street</label>
+                                <input type="name" class="form-control" id="Street" placeholder="Enter Street" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="ciTy">City</label>
+                                <input type="name" class="form-control" id="ciTy" placeholder="Enter City" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="sTate">State</label>
+                                <input type="text" class="form-control" id="sTate" placeholder="Enter State" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="zIp">Zip Code</label>
+                                <input type="text" class="form-control" id="zIp" placeholder="Zip Code" th:disabled="${not editar}">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <form th:object="${usuario}" method="get">
-                            <div class="row gutters">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h6 class="mb-2">Detalhes</h6>
-                                </div>
-
-                                <input type="hidden" th:field="*{id}" />
-
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label for="nome">Nome</label>
-                                        <input th:disabled="${!isEdicao}" th:field="*{nome}" type="text" class="form-control" id="nome">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input th:disabled="${!isEdicao}" th:field="*{email}" type="email" class="form-control" id="email">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label for="login">Login</label>
-                                        <input th:disabled="${!isEdicao}" th:field="*{login}" type="text" class="form-control" id="login">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label for="senha">Senha</label>
-                                        <input th:disabled="${!isEdicao}" th:field="*{senha}" type="password" class="form-control" id="senha">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row gutters">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <div class="text-right">
-                                        <a th:if="${!isEdicao}" th:href="@{/conta/editar}" class="btn btn-conta">Editar</a>
-                                        <a th:if="${isEdicao}" th:href="@{/conta}" class="btn btn-secondary">Cancelar</a>
-                                        <button th:if="${isEdicao}" type="button" id="submit" name="submit" class="btn btn-conta">Salvar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-</section>
+</div>
+
+<!--</div>-->
+
+<!-- ##### Footer Area Start ##### -->
 <footer class="footer-area">
     <div class="container h-100">
         <div class="row h-100">
@@ -217,14 +224,7 @@
                     class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between"
             >
                 <!-- Footer Social Info -->
-                <!-- <div class="footer-social-info text-right">
-                  <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                </div> -->
+
                 <!-- Footer Logo -->
                 <div class="footer-logo">
                     <a th:href="@{/}"
@@ -260,5 +260,6 @@
 <script th:src="@{/js/plugins/plugins.js}"></script>
 <!-- Active js -->
 <script th:src="@{/js/active.js}"></script>
+<script th:src="@{/js/recipe.js}"></script>
 </body>
 </html>
