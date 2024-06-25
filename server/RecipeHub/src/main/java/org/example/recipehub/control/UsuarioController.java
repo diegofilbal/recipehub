@@ -6,10 +6,7 @@ import org.example.recipehub.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,13 +17,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping()
-    public String listar(Model model) {
-        List<UsuarioDTO> usuarios = usuarioService.listar();
-        model.addAttribute("usuarios", usuarios);
-        return "usuario/listar";
-    }
-
     @GetMapping("/{id}")
     public String detalhar(Model model, @PathVariable Long id) {
         UsuarioDTO usuario = usuarioService.detalhar(id);
@@ -35,14 +25,15 @@ public class UsuarioController {
     }
 
     @GetMapping("/cadastrar")
-    public String formUsuario() {
-        return "usuario/cadastrar";
+    public String formUsuario(Model model) {
+        model.addAttribute("usuario", new UsuarioDTO());
+        return "index";
     }
 
     @PostMapping()
-    public String salvar(Usuario usuario) {
+    public String salvar(@ModelAttribute UsuarioDTO usuario) {
         UsuarioDTO novoUsuario = usuarioService.salvar(usuario);
-        return "redirect:/usuarios";
+        return "redirect:/usuarios/cadastrar";
     }
 
     @GetMapping("/{id}/deletar")
