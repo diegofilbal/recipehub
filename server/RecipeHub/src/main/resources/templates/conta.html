@@ -181,18 +181,19 @@
                                         <input th:disabled="${!isEdicao}" th:field="*{email}" type="email" class="form-control" id="email">
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" th:classappend="${!isEdicao} ? 'col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12' : ''">
                                     <div class="form-group">
                                         <label for="login">Login</label>
                                         <input th:disabled="${!isEdicao}" th:field="*{login}" type="text" class="form-control" id="login">
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" th:if="${isEdicao}">
                                     <div class="form-group">
                                         <label for="senha">Senha</label>
-                                        <input th:disabled="${!isEdicao}" th:field="*{senha}" type="password" class="form-control" id="senha">
+                                        <input th:field="*{senha}" type="password" class="form-control" id="senha">
                                     </div>
                                 </div>
+
                             </div>
                             <div class="row gutters">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
