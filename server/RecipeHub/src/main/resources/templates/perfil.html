@@ -16,20 +16,14 @@
 
     <!-- Favicon -->
     <link rel="icon" th:href="@{/img/core-img/load.svg}" />
+    <script
+            src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"
+    ></script>
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" th:href="@{/style.css}" />
-    <link rel="stylesheet" th:href="@{/css/register.css}" />
-
-    <style>
-        .nice-select {
-          width: 100% !important;
-          color: #2f2f2f !important;
-          height: 42px;
-          line-height: 40px;
-          background-color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{/css/perfil.css}" />
 </head>
 
 <body>
@@ -98,7 +92,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a th:href="@{/}">Home</a></li>
+                                <li class="active"><a th:href="@{/}">Home</a></li>
                                 <li>
                                 <li>
                                     <a href="#">Categorias</a>
@@ -113,7 +107,7 @@
                                         <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
                                     </ul>
                                 </li>
-                                <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
+                                <li><a th:href="@{/receitas}">Receitas</a></li>
 
                                 <!-- User Icon for desktop -->
                                 <li>
@@ -126,105 +120,101 @@
                                 </li>
 
                             </ul>
-
-                            <!-- Newsletter Form -->
-                            <div class="search-btn">
-                                <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
-                                <!-- <i class="fa fa-user" aria-hidden="true">Conta </i> -->
-                            </div>
                         </div>
                         <!-- Nav End -->
                     </div>
-
                 </nav>
             </div>
         </div>
     </div>
 </header>
-<!-- ##### Header Area End ##### -->
 
-<!-- ##### Breadcumb Area Start ##### -->
-<div
-        class="breadcumb-area bg-img bg-overlay">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <div class="breadcumb-text text-center">
-                    <h2>Cadastro de Receita</h2>
+<!--<div class="receipe-post-area section-padding-80">-->
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                            </div>
+                            <h5 class="user-name">Yuki Hayashi</h5>
+                            <h6 class="user-email">yuki@Maxwell.com</h6>
+                        </div>
+                        <div class="about">
+                            <h5>About</h5>
+                            <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <h6 class="mb-2 text-primary">Personal Details</h6>
+                        </div>
+                        <!-- Adicione th:disabled para cada campo de entrada -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Enter full name" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="eMail">Email</label>
+                                <input type="email" class="form-control" id="eMail" placeholder="Enter email ID" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Enter phone number" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="website">Website URL</label>
+                                <input type="url" class="form-control" id="website" placeholder="Website url" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="Street">Street</label>
+                                <input type="name" class="form-control" id="Street" placeholder="Enter Street" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="ciTy">City</label>
+                                <input type="name" class="form-control" id="ciTy" placeholder="Enter City" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="sTate">State</label>
+                                <input type="text" class="form-control" id="sTate" placeholder="Enter State" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="zIp">Zip Code</label>
+                                <input type="text" class="form-control" id="zIp" placeholder="Zip Code" th:disabled="${not editar}">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- ##### Breadcumb Area End ##### -->
 
-<div class="receipe-post-area section-padding-80">
-
-
-    <!-- Receipe Content Area -->
-    <div class="receipe-content-area">
-
-        <div class="container">
-            <div class="row">
-                <form class="form-container" th:action="@{/receitas/salvar}" th:object="${receitaDTO}" method="post">
-                    <div>
-                        <label for="nome">Nome:</label>
-                        <input th:field="*{nome}" class="form-control" type="text" id="nome" name="nome"/>
-                        <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label for="categoria">Categoria:</label>
-                        <select th:field="*{categoria}" class="form-select" id="categoria" name="categoria">
-                            <option th:each="categoria : ${T(org.example.recipehub.model.Categoria).values()}"
-                                    th:value="${categoria.name()}"
-                                    th:text="${categoria.descricao}">Descrição</option>
-                        </select>
-                        <div th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label for="descricao">Descrição:</label>
-                        <textarea th:field="*{descricao}" class="form-control" id="descricao" name="descricao"></textarea>
-                        <div th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label for="modoPreparo">Modo de Preparo:</label>
-                        <textarea th:field="*{modoPreparo}" class="form-control" id="modoPreparo" name="modoPreparo"></textarea>
-                        <div th:if="${#fields.hasErrors('modoPreparo')}" th:errors="*{modoPreparo}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label  for="tempoEstimado">Tempo Estimado (minutos):</label>
-                        <input th:field="*{tempoEstimado}" class="form-control" type="number" id="tempoEstimado" name="tempoEstimado"/>
-                        <div th:if="${#fields.hasErrors('tempoEstimado')}" th:errors="*{tempoEstimado}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label for="porcoes">Porções:</label>
-                        <input th:field="*{porcoes}" class="form-control" type="number" id="porcoes" name="porcoes"/>
-                        <div th:if="${#fields.hasErrors('porcoes')}" th:errors="*{porcoes}" class="error-message"></div>
-                    </div>
-
-                    <div id="ingredientes-container" class="ingredient-container">
-                        <div class="span-and-btn">
-                            <span>Ingredientes </span>
-                            <button type="button" class="form-button" onclick="adicionarIngrediente()">+</button>
-                        </div>
-                        <div th:if="${#fields.hasErrors('ingredientes')}" th:errors="*{ingredientes}" class="error-message"></div>
-                    </div>
-
-                    <div class="button-container">
-                        <button type="submit" class="btn delicious-btn">Salvar</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-
-</div>
+<!--</div>-->
 
 <!-- ##### Footer Area Start ##### -->
 <footer class="footer-area">
@@ -234,14 +224,7 @@
                     class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between"
             >
                 <!-- Footer Social Info -->
-                <!-- <div class="footer-social-info text-right">
-                  <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                </div> -->
+
                 <!-- Footer Logo -->
                 <div class="footer-logo">
                     <a th:href="@{/}"
@@ -278,6 +261,5 @@
 <!-- Active js -->
 <script th:src="@{/js/active.js}"></script>
 <script th:src="@{/js/recipe.js}"></script>
-<script th:src="@{/js/register-receipe.js}"></script>
 </body>
 </html>

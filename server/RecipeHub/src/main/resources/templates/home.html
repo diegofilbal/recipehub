@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
@@ -97,8 +97,8 @@
                           <li><a th:href="@{/receitas?categoria=FRUTOS_DO_MAR}">Frutos do Mar</a></li>
                           <li><a th:href="@{/receitas?categoria=PEIXES}">Peixes</a></li>
                           <li><a th:href="@{/receitas?categoria=CARNES}">Carnes</a></li>
-                          <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
                           <li><a th:href="@{/receitas?categoria=MASSAS}">Massas</a></li>
+                          <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
                         </ul>
                       </li>
                     <li><a th:href="@{/receitas}">Receitas</a></li>
@@ -108,8 +108,8 @@
                       <a href="#">Conta</a>
                       <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
                       <ul class="dropdown user-dropdown">
-                        <li><a href="#">Visualizar</a></li>
-                        <li><a href="index.html">Sair</a></li>
+                        <li><a th:href="@{/conta}">Visualizar</a></li>
+                        <li><a th:href="@{/logout}">Sair</a></li>
                       </ul>
                     </li>
 
@@ -130,8 +130,8 @@
         <div th:each="receita : ${receitasPadrao}"
              class="single-hero-slide bg-img"
              th:style="${'background-image: url(' +
-                       (receita.nome == 'Hambúrguer Caseiro' ? '/img/bg-img/bg1.jpg' :
-                        receita.nome == 'Noodles Chineses' ? '/img/bg-img/bg6.jpg' :
+                       (receita.nome == 'Hambúrguer Artesanal' ? '/img/bg-img/bg1.jpg' :
+                        receita.nome == 'Noodles' ? '/img/bg-img/bg6.jpg' :
                         receita.nome == 'Panquecas Doces' ? '/img/bg-img/bg2.jpg' :
                         '/img/bg-img/default.jpg') + ')'}">
           <div class="container h-100">
@@ -242,7 +242,7 @@
 
     <!-- ##### Small Receipe Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
-      <div class="container">
+      <div class="container" th:if="${not #lists.isEmpty(receitasFavoritas)}">
 
         <div class="row">
           <div class="col-12">
@@ -261,7 +261,7 @@
                 <img th:src="@{/img/bg-img/dinner-placeholder-crop.png}" alt="" />
               </div>
               <!-- Receipe Content -->
-              <div class="receipe-content">
+              <div class="receipe-content" style="display: flex; flex-direction: column; justify-content: center;">
                 <span th:text="'Criado em ' + ${#temporals.format(receita.criadoEm, 'dd/MM/yyyy HH:mm:ss')}"></span>
                 <a th:href="@{'/receitas/' + ${receita.id}}">
                   <h5 th:text="${receita.nome}">Massa Italiana Caseira</h5>

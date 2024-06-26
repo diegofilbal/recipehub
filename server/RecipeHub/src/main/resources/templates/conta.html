@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+<html lang="pt">
 <head>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
@@ -12,24 +11,15 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>RecipeHub | Receitas </title>
+    <title>RecipeHub | Conta</title>
 
     <!-- Favicon -->
-    <link rel="icon" th:href="@{/img/core-img/load.svg}" />
+    <link rel="icon" th:href="@{/img/core-img/load.svg}"/>
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" th:href="@{/style.css}" />
-    <link rel="stylesheet" th:href="@{/css/register.css}" />
+    <link rel="stylesheet" th:href="@{/css/conta.css}" />
 
-    <style>
-        .nice-select {
-          width: 100% !important;
-          color: #2f2f2f !important;
-          height: 42px;
-          line-height: 40px;
-          background-color: #fff;
-        }
-    </style>
 </head>
 
 <body>
@@ -113,10 +103,10 @@
                                         <li><a th:href="@{/receitas?categoria=AVES}">Aves</a></li>
                                     </ul>
                                 </li>
-                                <li class="active"><a th:href="@{/receitas}">Receitas</a></li>
+                                <li><a th:href="@{/receitas}">Receitas</a></li>
 
                                 <!-- User Icon for desktop -->
-                                <li>
+                                <li class="active">
                                     <a href="#">Conta</a>
                                     <!-- <img src="img/core-img/icon.jpeg" alt="User" class="user-photo-img"> -->
                                     <ul class="dropdown user-dropdown">
@@ -126,107 +116,112 @@
                                 </li>
 
                             </ul>
-
-                            <!-- Newsletter Form -->
-                            <div class="search-btn">
-                                <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
-                                <!-- <i class="fa fa-user" aria-hidden="true">Conta </i> -->
-                            </div>
                         </div>
                         <!-- Nav End -->
                     </div>
-
                 </nav>
             </div>
         </div>
     </div>
 </header>
-<!-- ##### Header Area End ##### -->
 
-<!-- ##### Breadcumb Area Start ##### -->
-<div
-        class="breadcumb-area bg-img bg-overlay">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <div class="breadcumb-text text-center">
-                    <h2>Cadastro de Receita</h2>
+<section>
+    <div
+            class="breadcumb-area bg-img bg-overlay">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcumb-text text-center">
+                        <h2>Conta</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- ##### Breadcumb Area End ##### -->
+</section>
 
-<div class="receipe-post-area section-padding-80">
+<section>
+    <div class="container conta">
 
+        <!-- Mensagem de Sucesso -->
+        <div th:block th:if="${success}" class="alert alert-success" role="alert">
+            <span th:text="${success}">Sucesso!</span>
+        </div>
 
-    <!-- Receipe Content Area -->
-    <div class="receipe-content-area">
+        <!-- Mensagem de Erro -->
+        <div th:block th:if="${error}" class="alert alert-danger" role="alert">
+            <span th:text="${error}">Erro!</span>
+        </div>
 
-        <div class="container">
-            <div class="row">
-                <form class="form-container" th:action="@{/receitas/salvar}" th:object="${receitaDTO}" method="post">
-                    <div>
-                        <label for="nome">Nome:</label>
-                        <input th:field="*{nome}" class="form-control" type="text" id="nome" name="nome"/>
-                        <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label for="categoria">Categoria:</label>
-                        <select th:field="*{categoria}" class="form-select" id="categoria" name="categoria">
-                            <option th:each="categoria : ${T(org.example.recipehub.model.Categoria).values()}"
-                                    th:value="${categoria.name()}"
-                                    th:text="${categoria.descricao}">Descrição</option>
-                        </select>
-                        <div th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label for="descricao">Descrição:</label>
-                        <textarea th:field="*{descricao}" class="form-control" id="descricao" name="descricao"></textarea>
-                        <div th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label for="modoPreparo">Modo de Preparo:</label>
-                        <textarea th:field="*{modoPreparo}" class="form-control" id="modoPreparo" name="modoPreparo"></textarea>
-                        <div th:if="${#fields.hasErrors('modoPreparo')}" th:errors="*{modoPreparo}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label  for="tempoEstimado">Tempo Estimado (minutos):</label>
-                        <input th:field="*{tempoEstimado}" class="form-control" type="number" id="tempoEstimado" name="tempoEstimado"/>
-                        <div th:if="${#fields.hasErrors('tempoEstimado')}" th:errors="*{tempoEstimado}" class="error-message"></div>
-                    </div>
-
-                    <div>
-                        <label for="porcoes">Porções:</label>
-                        <input th:field="*{porcoes}" class="form-control" type="number" id="porcoes" name="porcoes"/>
-                        <div th:if="${#fields.hasErrors('porcoes')}" th:errors="*{porcoes}" class="error-message"></div>
-                    </div>
-
-                    <div id="ingredientes-container" class="ingredient-container">
-                        <div class="span-and-btn">
-                            <span>Ingredientes </span>
-                            <button type="button" class="form-button" onclick="adicionarIngrediente()">+</button>
+        <div class="row gutters">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="account-settings">
+                            <div class="user-profile">
+                                <div class="user-avatar">
+                                    <img th:src="@{/img/bg-img/user.png}" alt="Maxwell Admin">
+                                </div>
+                                <h5 th:text="${usuario.nome}" class="user-name">Yuki Hayashi</h5>
+                                <h6 th:text="${usuario.email}" class="user-email">yuki@Maxwell.com</h6>
+                            </div>
                         </div>
-                        <div th:if="${#fields.hasErrors('ingredientes')}" th:errors="*{ingredientes}" class="error-message"></div>
                     </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <form th:action="@{/conta/atualizar} "th:object="${usuario}" method="post">
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-2">Detalhes</h6>
+                                </div>
 
-                    <div class="button-container">
-                        <button type="submit" class="btn delicious-btn">Salvar</button>
+                                <input type="hidden" th:field="*{id}" />
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input th:disabled="${!isEdicao}" th:field="*{nome}" type="text" class="form-control" id="nome">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input th:disabled="${!isEdicao}" th:field="*{email}" type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" th:classappend="${!isEdicao} ? 'col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12' : ''">
+                                    <div class="form-group">
+                                        <label for="login">Login</label>
+                                        <input th:disabled="${!isEdicao}" th:field="*{login}" type="text" class="form-control" id="login">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" th:if="${isEdicao}">
+                                    <div class="form-group">
+                                        <label for="senha">Senha</label>
+                                        <input th:field="*{senha}" type="password" class="form-control" id="senha">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <a th:if="${!isEdicao}" th:href="@{/conta/editar}" class="btn btn-conta">Editar</a>
+                                        <a th:if="${isEdicao}" th:href="@{/conta}" class="btn btn-secondary">Cancelar</a>
+                                        <button th:if="${isEdicao}" type="submit" id="submit" name="submit" class="btn btn-conta">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
-
+                </div>
             </div>
         </div>
     </div>
-
-</div>
-
-<!-- ##### Footer Area Start ##### -->
+</section>
 <footer class="footer-area">
     <div class="container h-100">
         <div class="row h-100">
@@ -277,7 +272,5 @@
 <script th:src="@{/js/plugins/plugins.js}"></script>
 <!-- Active js -->
 <script th:src="@{/js/active.js}"></script>
-<script th:src="@{/js/recipe.js}"></script>
-<script th:src="@{/js/register-receipe.js}"></script>
 </body>
 </html>

@@ -1,18 +1,35 @@
 package org.example.recipehub.model.dto;
 
+import jakarta.validation.constraints.*;
 import org.example.recipehub.model.Categoria;
 
 import java.util.List;
 
 public class ReceitaDTO {
     private Long id;
+
+    @NotBlank(message = "Nome não pode ser vazio")
+    @Size(max = 255, message = "Nome não pode ter mais que 255 caracteres")
     private String nome;
+
+    @NotBlank(message = "Descrição não pode ser vazia")
+    @Size(max = 1000, message = "Descrição não pode ter mais que 1000 caracteres")
     private String descricao;
+
+    @NotBlank(message = "Modo de preparo não pode ser vazio")
+    @Size(max = 2000, message = "Descrição não pode ter mais que 2000 caracteres")
     private String modoPreparo;
+
+    @Min(value = 1, message = "Tempo estimado deve ser no mínimo 1 minuto")
     private int tempoEstimado;
+
+    @NotNull(message = "Receita deve conter pelo menos um ingrediente")
     private List<IngredienteReceitaDTO> ingredientes;
+
+    @NotNull(message = "Categoria não pode ser nula")
     private Categoria categoria;
 
+    @Min(value = 1, message = "Porções deve ser no mínimo 1")
     private int porcoes;
 
     private Long usuarioId;

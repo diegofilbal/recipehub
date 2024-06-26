@@ -1,12 +1,17 @@
 package org.example.recipehub.model.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import org.example.recipehub.model.Usuario;
 
 public class UsuarioDTO {
 
     private Long id;
+
     private String nome;
+    
     private String login;
+
     private String senha;
     private String email;
 

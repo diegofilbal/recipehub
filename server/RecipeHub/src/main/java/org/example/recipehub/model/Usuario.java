@@ -1,9 +1,13 @@
 package org.example.recipehub.model;
 
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
 
 @Entity
-public class Usuario {
+public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +21,9 @@ public class Usuario {
     private String senha;
 
     private String email;
+
+    @Transient
+    private Collection<? extends GrantedAuthority> authorities;
 
     public Usuario() {
     }
@@ -34,6 +41,13 @@ public class Usuario {
         this.login = login;
         this.senha = senha;
         this.email = email;
+    }
+
+    public Usuario(Long id, String login, String senha, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
+        this.login = login;
+        this.senha = senha;
+        this.authorities = authorities;
     }
 
     public Long getId() {
@@ -74,5 +88,40 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.authorities;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.senha;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.login;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }
