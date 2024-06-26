@@ -198,7 +198,7 @@
                     </div>
                 </div>
 
-                <div th:if="${receita.usuario.id != 1}" class="col-12 col-md-4">
+                <div th:if="${receita.usuario.login != 'RecipeHub'}" class="col-12 col-md-4">
                     <div class="receipe-ratings text-right my-5">
                         <div class="ratings">
                             <form th:action="@{'/receitas/' + ${receita.id} + '/favoritar'}" th:object="${pesquisa}" method="post">
@@ -240,7 +240,7 @@
                 </div>
 
             </div>
-            <div th:if="${receita.usuario.id != 1}" class="col-12 col-lg-12 text-right">
+            <div th:if="${receita.usuario.login != 'RecipeHub'}" class="col-12 col-lg-12 text-right">
                 <form th:action="@{'/receitas/' + ${receita.id} + '/excluir'}" method="post">
                     <input type="hidden" name="_method" value="delete" />
                     <button type="submit" class="btn btn-danger" style="border-left: ; height: 60px; padding: 0 30px; font-size: 16px; line-height: 58px; border-radius: 30px; font-weight:500;">Excluir</button>
