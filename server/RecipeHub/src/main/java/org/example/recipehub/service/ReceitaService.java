@@ -29,6 +29,11 @@ public class ReceitaService {
     @Autowired
     private IngredienteService ingredienteService;
 
+    public void excluir(Long id) {
+        receitaRepository.deleteById(id);
+    }
+
+
     public List<Receita> findAll(Long usuarioId, String categoria, String nome) {
         return customReceitaRepository.findReceitasByCategoriaAndNome(usuarioId, categoria, nome);
     }

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/receitas")
@@ -67,4 +68,19 @@ public class ReceitaController {
         receitaService.favoritar(id);
         return "redirect:/receitas/" + id;
     }
+
+    @PostMapping("/{id}/excluir")
+    public String excluirReceita(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        Receita receita = receitaService.findById(id);
+
+        if(receita == null) {
+            redirectAttributes.addFlashAttribute("error", "Receita não encontrada!");
+            return "redirect:/receitas";
+        }
+        receitaService.excluir(id);
+        redirectAttributes.addFlashAttribute("sucess", "Receita excluída com sucesso.");
+        return "redirect:/receitas";
+    }
+
+
 }

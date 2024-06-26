@@ -235,13 +235,20 @@
                                    th:attr="data-nome=${ingrediente.ingrediente.nome}, data-quantidade=${ingrediente.quantidade}, data-medida=${ingrediente.medida.descricao}"
                                    th:text="${ingrediente.ingrediente.nome} + ' - ' + ${ingrediente.quantidade} + ' ' + ${ingrediente.medida.descricao}">
                             </label>
-
                         </div>
                     </div>
                 </div>
 
             </div>
+            <div th:if="${receita.usuario.id != 1}" class="col-12 col-lg-12 text-right">
+                <form th:action="@{'/receitas/' + ${receita.id} + '/excluir'}" method="post">
+                    <input type="hidden" name="_method" value="delete" />
+                    <button type="submit" class="btn btn-danger" style="border-left: ; height: 60px; padding: 0 30px; font-size: 16px; line-height: 58px; border-radius: 30px; font-weight:500;">Excluir</button>
+                </form>
+            </div>
         </div>
+
+
     </div>
 </div>
 

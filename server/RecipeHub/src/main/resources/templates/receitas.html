@@ -176,7 +176,16 @@
           <div class="row">
             <section class="best-receipe-area" style="width: 100%; margin: 0 15px;">
 
-                <div class="row">
+              <!-- Mensagem de Sucesso -->
+              <div th:if="${sucess}" class="alert alert-success" th:text="${sucess}">
+              </div>
+
+              <!-- Mensagem de Erro -->
+              <div th:if="${error}" class="alert alert-danger" th:text="${error}">
+              </div>
+
+
+              <div class="row">
                     <div class="col-12 text-right" style="margin-bottom: 30px;">
                         <a th:href="@{/receitas/nova}" class="btn delicious-btn" >
                         Nova Receita +
