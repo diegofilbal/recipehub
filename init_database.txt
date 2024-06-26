@@ -1,0 +1,46 @@
+-- Inserção de usuário principal RecipeHub
+INSERT INTO usuario (id, email, login, nome) VALUES (1, 'recipehub@gmail.com', 'RecipeHub', 'Recipe Hub');
+SELECT setval('usuario_id_seq', (SELECT MAX(id) FROM usuario));
+
+-- Inserção de receitas com descrições detalhadas
+INSERT INTO receita (nome, descricao, modo_preparo , tempo_em_minutos , porcoes, categoria, usuario_id, favorito, criado_em) VALUES
+('Noodles', 'Noodles rápidos e saborosos, perfeitos para um jantar leve ou como acompanhamento.', 'Ferva a água, adicione os noodles e cozinhe por 3-5 minutos. Escorra e misture com seu molho favorito.', 10, 1, 'MASSAS', 1, false, NOW()),
+('Panquecas Doces', 'Panquecas fofas e doces, ideais para o café da manhã ou lanche da tarde. Servir com mel ou xarope de bordo.', 'Em uma tigela, misture farinha, açúcar, fermento e sal. Em outra tigela, bata ovos com leite e manteiga derretida. Combine os líquidos com os secos até formar uma massa homogênea. Aqueça uma frigideira e frite as panquecas até que estejam douradas.', 15, 4, 'DOCES', 1, false, NOW()),
+('Hambúrguer Artesanal', 'Hambúrguer suculento com carne moída fresca, perfeito para um almoço satisfatório ou jantar casual.', 'Tempere a carne moída com sal e pimenta. Forme hambúrgueres e frite-os em uma chapa quente até atingir o ponto desejado. Sirva no pão com alface, tomate, queijo e molhos de sua escolha.', 20, 2, 'SALGADOS', 1, false, NOW());
+
+-- Inserção de ingredientes
+INSERT INTO ingrediente (nome) VALUES
+('Água'),
+('Noodles'),
+('Farinha'),
+('Açúcar'),
+('Fermento'),
+('Sal'),
+('Leite'),
+('Manteiga'),
+('Ovo'),
+('Carne de hambúrguer'),
+('Pão de hambúrguer'),
+('Alface'),
+('Tomate'),
+('Queijo'),
+('Molhos');
+
+
+-- Inserção na tabela ingrediente_receita
+INSERT INTO ingrediente_receita (ingrediente_id, receita_id, quantidade, medida) VALUES
+((SELECT id FROM ingrediente WHERE nome = 'Água'), (SELECT id FROM receita WHERE nome = 'Noodles'), 1000, 'ML'),
+((SELECT id FROM ingrediente WHERE nome = 'Noodles'), (SELECT id FROM receita WHERE nome = 'Noodles'), 250, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Farinha'), (SELECT id FROM receita WHERE nome = 'Panquecas Doces'), 200, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Açúcar'), (SELECT id FROM receita WHERE nome = 'Panquecas Doces'), 50, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Fermento'), (SELECT id FROM receita WHERE nome = 'Panquecas Doces'), 10, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Sal'), (SELECT id FROM receita WHERE nome = 'Panquecas Doces'), 5, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Leite'), (SELECT id FROM receita WHERE nome = 'Panquecas Doces'), 300, 'ML'),
+((SELECT id FROM ingrediente WHERE nome = 'Manteiga'), (SELECT id FROM receita WHERE nome = 'Panquecas Doces'), 30, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Ovo'), (SELECT id FROM receita WHERE nome = 'Panquecas Doces'), 2, 'UNIDADE'),
+((SELECT id FROM ingrediente WHERE nome = 'Carne de hambúrguer'), (SELECT id FROM receita WHERE nome = 'Hambúrguer Artesanal'), 300, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Pão de hambúrguer'), (SELECT id FROM receita WHERE nome = 'Hambúrguer Artesanal'), 1, 'UNIDADE'),
+((SELECT id FROM ingrediente WHERE nome = 'Alface'), (SELECT id FROM receita WHERE nome = 'Hambúrguer Artesanal'), 30, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Tomate'), (SELECT id FROM receita WHERE nome = 'Hambúrguer Artesanal'), 2, 'UNIDADE'),
+((SELECT id FROM ingrediente WHERE nome = 'Queijo'), (SELECT id FROM receita WHERE nome = 'Hambúrguer Artesanal'), 2, 'GRAMAS'),
+((SELECT id FROM ingrediente WHERE nome = 'Molhos'), (SELECT id FROM receita WHERE nome = 'Hambúrguer Artesanal'), 30, 'ML');
